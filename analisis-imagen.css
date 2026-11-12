@@ -4501,3 +4501,220 @@ details[open] .technique__chevron {
     transform: none;
   }
 }
+
+/* ============================================================
+   NUEVO TERCER PANEL — IMAGEN ORIGINAL DE EXCEL
+   Se integra a los paneles originales sin sustituirlos.
+============================================================ */
+
+#encuesta > .container {
+  max-width: 90rem;
+}
+
+#encuesta .survey {
+  width: 100%;
+  max-width: 87rem;
+  margin-inline: auto;
+}
+
+#encuesta .survey__original {
+  min-width: 0;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+}
+
+.survey__original-heading {
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+
+.survey__original-heading h3 {
+  font-size: 1.4rem;
+  line-height: 1.2;
+  color: var(--cocoa-900);
+}
+
+.survey__original-heading > p:not(.label) {
+  font-size: .95rem;
+  color: var(--muted-ink);
+  line-height: 1.55;
+}
+
+.survey__original-question {
+  align-self: flex-start;
+  padding: .4rem .8rem;
+  border-radius: 30px;
+  background: var(--honey-100);
+  color: var(--cocoa-900);
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+/* RECUADRO DE IMAGEN */
+
+.survey__original-stage {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  background: #fffaf0;
+  border: 1px solid var(--honey-300);
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(74,27,1,.055);
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+
+.survey__original-stage:hover {
+  border-color: var(--honey-500);
+  box-shadow: 0 16px 35px rgba(74,27,1,.09);
+}
+
+/* Imagen real */
+
+.survey__original-stage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 38rem;
+  object-fit: contain;
+  object-position: center;
+  border-radius: .5rem;
+}
+
+/* Estado vacío */
+
+.survey__original-empty {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  background: #fffaf0;
+}
+
+.survey__original-stage.is-empty img {
+  display: none;
+}
+
+.survey__original-stage.is-empty .survey__original-empty {
+  display: flex;
+}
+
+.survey__original-empty > span {
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--honey-600);
+}
+
+.survey__original-empty strong {
+  color: var(--cocoa-900);
+  font-size: .95rem;
+}
+
+.survey__original-empty small {
+  max-width: 240px;
+  color: var(--muted-ink);
+  line-height: 1.5;
+  font-size: .85rem;
+}
+
+.survey__original-footnote {
+  font-size: .82rem;
+  line-height: 1.5;
+  color: var(--muted-ink);
+}
+
+/* TABLET: el tercer panel pasa debajo de los dos originales */
+
+@media (min-width: 640px) and (max-width: 1199px) {
+
+  #encuesta .survey__original {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    align-items: center;
+    gap: 1.5rem 2rem;
+    padding: 2rem 2.25rem;
+  }
+
+  .survey__original-stage {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    min-height: 26rem;
+  }
+
+  .survey__original-footnote {
+    grid-column: 1;
+  }
+
+}
+
+/* ESCRITORIO: TRES COLUMNAS UNIDAS Y CENTRADAS */
+
+@media (min-width: 1200px) {
+
+  #encuesta .survey {
+    grid-template-columns:
+      minmax(250px, .95fr)
+      minmax(480px, 1.65fr)
+      minmax(235px, .8fr);
+    align-items: stretch;
+  }
+
+  /* Línea divisoria 1: resumen / pregunta */
+
+  #encuesta .survey__overview {
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
+  }
+
+  /* Línea divisoria 2: pregunta / imagen Excel */
+
+  #encuesta .survey__detail {
+    border-right: 1px solid var(--line);
+  }
+
+  /* Tercer panel añadido */
+
+  #encuesta .survey__original {
+    grid-column: auto;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 2.5rem 1.25rem;
+    border: 0;
+  }
+
+  .survey__original-stage {
+    min-height: 30rem;
+    flex: 1;
+  }
+
+}
+
+/* CELULARES */
+
+@media (max-width: 639px) {
+
+  #encuesta .survey__original {
+    padding: 1.5rem;
+  }
+
+  .survey__original-stage {
+    min-height: 22rem;
+  }
+
+}

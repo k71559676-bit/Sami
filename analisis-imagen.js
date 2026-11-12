@@ -664,3 +664,158 @@
     window.addEventListener("scroll", arm, { passive: true, once: true });
   }
 })();
+
+/* ============================================================
+   SAMILU — TERCER PANEL DE ENCUESTA
+   Sincronización de las cinco imágenes originales de Excel.
+
+   No modifica ni reemplaza los gráficos existentes.
+============================================================ */
+
+(function () {
+
+  "use strict";
+
+  function initOriginalSurveyImages() {
+
+    const survey = document.querySelector("[data-survey]");
+
+    if (!survey) return;
+
+    const image = survey.querySelector("[data-original-image]");
+
+    const stage = survey.querySelector("[data-original-stage]");
+
+    const questionLabel = survey.querySelector("[data-original-question]");
+
+    if (!image || !stage) return;
+
+    let requestNumber = 0;
+
+
+    /* =====================================================
+       ACTUALIZAR LA IMAGEN SEGÚN LA PREGUNTA
+    ===================================================== */
+
+    function updateOriginalImage(index) {
+
+      const panel = document.getElementById(
+        "encuesta-panel-" + (index + 1)
+      );
+
+      if (!panel) return;
+
+      const number = index + 1;
+
+      const imagePath = image.getAttribute(
+        "data-image-" + number
+      );
+
+      const label = panel.querySelector(".label");
+
+      const questionName = label
+        ? label.textContent.trim()
+        : "Pregunta " + number;
+
+      if (questionLabel) {
+        questionLabel.textContent = questionName;
+      }
+
+      image.alt =
+        "Imagen original de Excel correspondiente a " + questionName;
+
+      /* Ocultar temporalmente la imagen mientras se carga */
+
+      stage.classList.add("is-empty");
+
+      /* Identificador para evitar respuestas de carga antiguas */
+
+      const currentRequest = ++requestNumber;
+
+      image.onload = function () {
+
+        if (currentRequest !== requestNumber) return;
+
+        if (image.naturalWidth > 0) {
+          stage.classList.remove("is-empty");
+        } else {
+          stage.classList.add("is-empty");
+        }
+
+      };
+
+      image.onerror = function () {
+
+        if (currentRequest !== requestNumber) return;
+
+        stage.classList.add("is-empty");
+
+      };
+
+      /* Cargar la ruta correspondiente */
+
+      if (!imagePath) {
+
+        image.removeAttribute("src");
+
+        stage.classList.add("is-empty");
+
+        return;
+
+      }
+
+      image.src = imagePath;
+
+      /* Comprobar imágenes almacenadas en caché */
+
+      if (image.complete) {
+
+        if (image.naturalWidth > 0) {
+          stage.classList.remove("is-empty");
+        } else {
+          stage.classList.add("is-empty");
+        }
+
+      }
+
+    }
+
+
+    /* =====================================================
+       ESCUCHAR LOS CAMBIOS DE PREGUNTA
+
+       Este mismo evento es utilizado por las flechas
+       y por las pestañas originales de la encuesta.
+    ===================================================== */
+
+    survey.addEventListener("tabchange", function (event) {
+
+      updateOriginalImage(event.detail.index);
+
+    });
+
+
+    /* =====================================================
+       INICIAR CON LA PRIMERA PREGUNTA
+    ===================================================== */
+
+    updateOriginalImage(0);
+
+  }
+
+
+  if (document.readyState === "loading") {
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      initOriginalSurveyImages,
+      { once: true }
+    );
+
+  } else {
+
+    initOriginalSurveyImages();
+
+  }
+
+})();
