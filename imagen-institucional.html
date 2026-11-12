@@ -1,0 +1,2464 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+ <head>
+
+  <meta charset="utf-8"/>
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+  <title>
+
+   Imagen Institucional | SAMILU
+
+  </title>
+
+  <!-- ==========================================================
+
+
+
+         FUENTES
+
+
+
+    =========================================================== -->
+
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&amp;family=Lilita+One&amp;display=swap" rel="stylesheet"/>
+
+  <!-- ==========================================================
+
+
+
+         CSS GENERAL
+
+
+
+    =========================================================== -->
+
+  <link href="estilos.css" rel="stylesheet"/>
+
+  <!-- ==========================================================
+
+
+
+         CSS DE ESTA PÁGINA
+
+
+
+    =========================================================== -->
+
+  <link href="imagen-institucional.css" rel="stylesheet"/>
+
+  <!-- ==========================================================
+
+
+
+         CORRECCIÓN DE ANCLAS CON NAVBAR STICKY
+
+
+
+    =========================================================== -->
+
+  <style>
+
+   [id] {
+
+
+
+            scroll-margin-top: 115px;
+
+
+
+        }
+
+
+
+        #percepcion-cliente,
+
+
+
+        #fortalezas,
+
+
+
+        #aspectos-mejorar,
+
+
+
+        #dimensiones-imagen,
+
+
+
+        #componentes-imagen {
+
+
+
+            scroll-margin-top: 115px;
+
+
+
+        }
+
+  </style>
+
+  <style>
+
+   /* ==========================================================
+
+   SAMILU — REFINAMIENTO DE IMAGEN INSTITUCIONAL
+
+   Se mantienen imágenes únicamente en portada y percepción.
+
+========================================================== */
+
+
+
+:root {
+
+    --inst-honey: #E8A51A;
+
+    --inst-sage: #AAB87A;
+
+    --inst-cream: #F8F2E2;
+
+    --inst-brown: #4A1B01;
+
+    --inst-olive: #5D542E;
+
+}
+
+
+
+/* Más aire y jerarquía sin llenar la página de texto */
+
+#fortalezas,
+
+#aspectos-mejorar,
+
+#dimensiones-imagen,
+
+#componentes-imagen {
+
+    position: relative;
+
+    isolation: isolate;
+
+}
+
+
+
+#fortalezas .strengths-heading,
+
+#aspectos-mejorar .improvement-header,
+
+#dimensiones-imagen .dimensions-header,
+
+#componentes-imagen .components-header {
+
+    max-width: 1050px;
+
+    margin-bottom: 32px;
+
+}
+
+
+
+#fortalezas .strengths-heading > p,
+
+#aspectos-mejorar .improvement-header > p,
+
+#dimensiones-imagen .dimensions-header > p,
+
+#componentes-imagen .components-header > p {
+
+    max-width: 760px;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* Fortalezas: tres tarjetas tipográficas sin cuadros de imagen */
+
+#fortalezas .strengths-grid.text-feature-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    width: 100%;
+
+}
+
+
+
+#fortalezas .text-feature-card {
+
+    position: relative;
+
+    min-width: 0;
+
+    padding: 30px 27px 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    overflow: hidden;
+
+    background: linear-gradient(145deg, #FFFDF8 0%, #F8F2E2 100%);
+
+    border: 1px solid rgba(74, 27, 1, .09);
+
+    border-radius: 24px;
+
+    box-shadow: 0 12px 35px rgba(74, 27, 1, .06);
+
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+
+}
+
+
+
+#fortalezas .text-feature-card::before,
+
+#aspectos-mejorar .text-feature-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 5px;
+
+    background: linear-gradient(90deg, var(--inst-honey), var(--inst-sage));
+
+}
+
+
+
+#fortalezas .text-feature-card:hover,
+
+#aspectos-mejorar .text-feature-card:hover {
+
+    transform: translateY(-4px);
+
+    border-color: rgba(232, 165, 26, .6);
+
+    box-shadow: 0 18px 42px rgba(74, 27, 1, .1);
+
+}
+
+
+
+#fortalezas .feature-index,
+
+#aspectos-mejorar .feature-index,
+
+#componentes-imagen .feature-index {
+
+    position: absolute;
+
+    top: 19px;
+
+    right: 22px;
+
+    color: rgba(74, 27, 1, .28);
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: .08em;
+
+}
+
+
+
+#fortalezas .feature-mark {
+
+    width: 54px;
+
+    height: 54px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 17px;
+
+    background: #F4E5B7;
+
+    color: var(--inst-brown);
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+}
+
+
+
+#fortalezas .strength-text {
+
+    padding: 0;
+
+}
+
+
+
+#fortalezas .strength-text h3,
+
+#aspectos-mejorar .improvement-item h3 {
+
+    margin: 0 0 10px;
+
+    color: var(--inst-brown);
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: clamp(20px, 2vw, 25px);
+
+    line-height: 1.2;
+
+}
+
+
+
+#fortalezas .strength-text p,
+
+#aspectos-mejorar .improvement-item p {
+
+    margin: 0;
+
+    color: var(--inst-olive);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* Aspectos por mejorar: ancho completo, sin columna de imagen */
+
+#aspectos-mejorar .improvement-layout.text-only-layout {
+
+    display: block;
+
+    width: 100%;
+
+}
+
+
+
+#aspectos-mejorar .improvement-list.text-feature-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    width: 100%;
+
+}
+
+
+
+#aspectos-mejorar .improvement-item.text-feature-card {
+
+    min-width: 0;
+
+    min-height: 210px;
+
+    position: relative;
+
+    padding: 34px 25px 27px;
+
+    box-sizing: border-box;
+
+    display: block;
+
+    background: #FFFDF8;
+
+    border: 1px solid rgba(74, 27, 1, .1);
+
+    border-radius: 22px;
+
+    box-shadow: 0 12px 32px rgba(74, 27, 1, .055);
+
+}
+
+
+
+#aspectos-mejorar .improvement-item > span {
+
+    display: none;
+
+}
+
+
+
+/* Dimensiones: cinco categorías dadas por la usuaria */
+
+#dimensiones-imagen .dimensions-grid-five {
+
+    display: grid;
+
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+
+    gap: 18px;
+
+    width: 100%;
+
+}
+
+
+
+#dimensiones-imagen .dimension-card {
+
+    grid-column: span 2;
+
+    position: relative;
+
+    min-width: 0;
+
+    padding: 27px 23px 24px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 11px;
+
+    background: linear-gradient(150deg, #FFFDF8, #F7F0DC);
+
+    border: 1px solid rgba(74, 27, 1, .09);
+
+    border-radius: 22px;
+
+    box-shadow: 0 10px 30px rgba(74, 27, 1, .055);
+
+    transition: transform .25s ease, box-shadow .25s ease;
+
+}
+
+
+
+#dimensiones-imagen .dimension-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 17px 35px rgba(74, 27, 1, .1);
+
+}
+
+
+
+#dimensiones-imagen .dimension-card:nth-child(4) {
+
+    grid-column: 2 / span 2;
+
+}
+
+
+
+#dimensiones-imagen .dimension-card:nth-child(5) {
+
+    grid-column: 4 / span 2;
+
+}
+
+
+
+#dimensiones-imagen .dimension-card > span {
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: .1em;
+
+    color: #A16A06;
+
+}
+
+
+
+#dimensiones-imagen .dimension-icon {
+
+    width: 47px;
+
+    height: 47px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 15px;
+
+    background: #E9EBCF;
+
+    color: var(--inst-brown);
+
+    font-size: 23px;
+
+}
+
+
+
+#dimensiones-imagen .dimension-card h3 {
+
+    margin: 2px 0 0;
+
+    color: var(--inst-brown);
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 20px;
+
+    line-height: 1.25;
+
+}
+
+
+
+#dimensiones-imagen .dimension-card p {
+
+    margin: 0;
+
+    color: var(--inst-olive);
+
+    font-size: 14px;
+
+    line-height: 1.65;
+
+}
+
+
+
+#dimensiones-imagen .dimension-card small {
+
+    margin-top: auto;
+
+    padding-top: 10px;
+
+    color: #95650C;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .1em;
+
+}
+
+
+
+/* Componentes: conocer, sentir, actuar */
+
+#componentes-imagen .components-layout.text-only-layout {
+
+    display: block;
+
+    width: 100%;
+
+}
+
+
+
+#componentes-imagen .components-grid-three {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    width: 100%;
+
+}
+
+
+
+#componentes-imagen .component-card {
+
+    position: relative;
+
+    min-width: 0;
+
+    min-height: 300px;
+
+    padding: 30px 27px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    overflow: hidden;
+
+    background: #FFFDF8;
+
+    border: 1px solid rgba(74, 27, 1, .1);
+
+    border-radius: 24px;
+
+    box-shadow: 0 12px 32px rgba(74, 27, 1, .06);
+
+    transition: transform .25s ease, box-shadow .25s ease;
+
+}
+
+
+
+#componentes-imagen .component-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0 0 auto 0;
+
+    height: 5px;
+
+    background: linear-gradient(90deg, var(--inst-honey), var(--inst-sage));
+
+}
+
+
+
+#componentes-imagen .component-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 18px 40px rgba(74, 27, 1, .1);
+
+}
+
+
+
+#componentes-imagen .component-symbol {
+
+    width: 52px;
+
+    height: 52px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 17px;
+
+    background: #F4E5B7;
+
+    color: var(--inst-brown);
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+}
+
+
+
+#componentes-imagen .component-label {
+
+    color: #95650C;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: .13em;
+
+}
+
+
+
+#componentes-imagen .component-card h3 {
+
+    margin: 0;
+
+    color: var(--inst-brown);
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 23px;
+
+    line-height: 1.22;
+
+}
+
+
+
+#componentes-imagen .component-card p {
+
+    margin: 0;
+
+    color: var(--inst-olive);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* Ajustes responsive */
+
+@media (max-width: 1000px) {
+
+    #fortalezas .strengths-grid.text-feature-grid,
+
+    #aspectos-mejorar .improvement-list.text-feature-grid,
+
+    #componentes-imagen .components-grid-three {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    }
+
+
+
+    #dimensiones-imagen .dimensions-grid-five {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    }
+
+
+
+    #dimensiones-imagen .dimension-card,
+
+    #dimensiones-imagen .dimension-card:nth-child(4),
+
+    #dimensiones-imagen .dimension-card:nth-child(5) {
+
+        grid-column: auto;
+
+    }
+
+
+
+    #aspectos-mejorar .improvement-item.text-feature-card,
+
+    #componentes-imagen .component-card {
+
+        min-height: 0;
+
+    }
+
+}
+
+
+
+@media (max-width: 640px) {
+
+    #fortalezas .strengths-grid.text-feature-grid,
+
+    #aspectos-mejorar .improvement-list.text-feature-grid,
+
+    #dimensiones-imagen .dimensions-grid-five,
+
+    #componentes-imagen .components-grid-three {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+
+    #fortalezas .text-feature-card,
+
+    #aspectos-mejorar .improvement-item.text-feature-card,
+
+    #dimensiones-imagen .dimension-card,
+
+    #componentes-imagen .component-card {
+
+        padding: 25px 22px;
+
+    }
+
+
+
+    #fortalezas .strength-text h3,
+
+    #aspectos-mejorar .improvement-item h3 {
+
+        font-size: 22px;
+
+    }
+
+}
+
+  </style>
+
+ </head>
+
+ <body data-page="imagen">
+
+  <!-- ==========================================================
+
+
+
+         HEADER
+
+
+
+    =========================================================== -->
+
+  <header class="site-header">
+
+   <div class="brand-area">
+
+    <div class="brand-logo-wrap">
+
+     <img alt="Logo SAMILU" class="brand-logo" src="img/logo samilu.png"/>
+
+    </div>
+
+    <div class="brand-copy">
+
+     <h1>
+
+      DISFRUTA DEL SABOR DE LA SELVA CENTRAL
+
+     </h1>
+
+    </div>
+
+   </div>
+
+  </header>
+
+  
+<!-- =====================================================
+     NAVEGACIÓN GLOBAL SAMILU
+     14 APARTADOS PRINCIPALES
+     PÁGINA ACTUAL: IMAGEN INSTITUCIONAL
+===================================================== -->
+
+<nav class="navbar">
+
+    <!-- 01. INICIO -->
+    <div class="nav-item" data-page="inicio">
+        <a class="nav-link" href="index.html">
+            Inicio
+        </a>
+    </div>
+
+
+    <!-- 02. EMPRESA -->
+    <div class="nav-item dropdown-item" data-page="empresa">
+        <a class="nav-link" href="empresa.html">
+            Empresa
+        </a>
+
+        <div class="dropdown-menu">
+            <a href="empresa.html#datos">Datos de la empresa</a>
+            <a href="empresa.html#descripcion">Descripción de la empresa</a>
+            <a href="empresa.html#mision">Misión</a>
+            <a href="empresa.html#vision">Visión</a>
+            <a href="empresa.html#valores">Valores corporativos</a>
+        </div>
+    </div>
+
+
+    <!-- 03. PÚBLICO OBJETIVO -->
+    <div class="nav-item dropdown-item" data-page="publico">
+        <a class="nav-link" href="publico-objetivo.html">
+            Público<br>Objetivo
+        </a>
+
+        <div class="dropdown-menu">
+            <a href="publico-objetivo.html#segmento">Segmento objetivo</a>
+            <a href="publico-objetivo.html#edad">Edad</a>
+            <a href="publico-objetivo.html#ubicacion">Ubicación</a>
+            <a href="publico-objetivo.html#necesidades">Necesidades</a>
+            <a href="publico-objetivo.html#caracteristicas">Características</a>
+        </div>
+    </div>
+
+
+    <!-- 04. IDENTIDAD CORPORATIVA -->
+    <div class="nav-item dropdown-item" data-page="corporativa">
+        <a class="nav-link" href="identidad-corporativa.html">
+            Identidad<br>Corporativa
+        </a>
+
+        <div class="dropdown-menu">
+            <a href="identidad-corporativa.html#imagen-corporativa">
+                ¿Qué es la imagen corporativa?
+            </a>
+            <a href="identidad-corporativa.html#elementos-identidad">
+                Elementos de identidad
+            </a>
+            <a href="identidad-corporativa.html#tipos-identidad">
+                Tipos de identidad
+            </a>
+            <a href="identidad-corporativa.html#identidad-cultural">
+                Identidad cultural
+            </a>
+            <a href="identidad-corporativa.html#identidad-verbal">
+                Identidad verbal
+            </a>
+            <a href="identidad-corporativa.html#identidad-corporativa">
+                Identidad corporativa
+            </a>
+        </div>
+    </div>
+
+
+    <!-- 05. IDENTIDAD VISUAL -->
+    <div class="nav-item dropdown-item" data-page="visual">
+        <a class="nav-link" href="identidad-visual.html">
+            Identidad Visual
+        </a>
+
+        <div class="dropdown-menu">
+            <a href="identidad-visual.html#logotipo">Logotipo</a>
+            <a href="identidad-visual.html#bocetos-proceso">
+                Bocetos y proceso de creación
+            </a>
+            <a href="identidad-visual.html#colores-corporativos">
+                Colores corporativos
+            </a>
+            <a href="identidad-visual.html#tipografia">Tipografía</a>
+            <a href="identidad-visual.html#elementos-graficos">
+                Elementos gráficos
+            </a>
+            <a href="identidad-visual.html#uniformes">Uniformes</a>
+            <a href="identidad-visual.html#empaques">Empaques</a>
+            <a href="identidad-visual.html#letreros">Letreros</a>
+            <a href="identidad-visual.html#decoracion">Decoración</a>
+        </div>
+    </div>
+
+
+    <!-- 06. IMAGEN INSTITUCIONAL -->
+    <div class="nav-item dropdown-item active" data-page="imagen">
+        <a class="nav-link"
+           href="imagen-institucional.html"
+           aria-current="page">
+            Imagen<br>Institucional
+        </a>
+
+        <div class="dropdown-menu">
+            <a href="imagen-institucional.html#percepcion-cliente">
+                Percepción del cliente
+            </a>
+            <a href="imagen-institucional.html#fortalezas">
+                Fortalezas
+            </a>
+            <a href="imagen-institucional.html#aspectos-mejorar">
+                Aspectos por mejorar
+            </a>
+            <a href="imagen-institucional.html#dimensiones-imagen">
+                Dimensiones de la imagen
+            </a>
+            <a href="imagen-institucional.html#componentes-imagen">
+                Componentes de la imagen
+            </a>
+        </div>
+    </div>
+
+
+    <!-- 07. APLICACIONES -->
+    <div class="nav-item dropdown-item" data-page="aplicaciones">
+        <a class="nav-link" href="aplicaciones.html">
+            Aplicaciones
+        </a>
+
+        <div class="dropdown-menu">
+            <a href="aplicaciones.html#tarjetas">Tarjetas</a>
+            <a href="aplicaciones.html#vasos-empaques">
+                Vasos y empaques
+            </a>
+            <a href="aplicaciones.html#uniformes">Uniformes</a>
+            <a href="aplicaciones.html#afiches">Afiches</a>
+            <a href="aplicaciones.html#redes-sociales">
+                Redes sociales
+            </a>
+            <a href="aplicaciones.html#sitio-web">Sitio Web</a>
+        </div>
+    </div>
+
+
+    <!-- 08. COMUNICACIONES -->
+    <div class="nav-item dropdown-item" data-page="comunicaciones">
+        <a class="nav-link" href="comunicaciones.html">
+            Comunicaciones
+        </a>
+
+        <div class="dropdown-menu">
+            <a href="comunicaciones.html#lenguaje-corporativo">
+                Lenguaje corporativo
+            </a>
+            <a href="comunicaciones.html#canales-comunicacion">
+                Canales de comunicación
+            </a>
+            <a href="comunicaciones.html#mensaje-principal">
+                Mensaje principal
+            </a>
+            <a href="comunicaciones.html#eslogan">Eslogan</a>
+        </div>
+    </div>
+
+
+    <!-- 09. MANUAL DE IDENTIDAD CORPORATIVA -->
+    <div class="nav-item dropdown-item" data-page="manual">
+        <a class="nav-link" href="manual-identidad.html">
+            Manual de Identidad<br>Corporativa
+        </a>
+
+        <div class="dropdown-menu">
+            <a href="manual-identidad.html#identidad-visual">
+                Identidad visual
+            </a>
+            <a href="manual-identidad.html#identidad-verbal">
+                Identidad verbal
+            </a>
+            <a href="manual-identidad.html#Imagotipo">Imagotipo</a>
+            <a href="manual-identidad.html#logotipo">Logotipo</a>
+            <a href="manual-identidad.html#presentacion-logotipo">
+                Presentación del logotipo
+            </a>
+            <a href="manual-identidad.html#estructura-composicion">
+                Estructura y composición
+            </a>
+            <a href="manual-identidad.html#area-proteccion">
+                Área de protección
+            </a>
+            <a href="manual-identidad.html#tipografia">Tipografía</a>
+            <a href="manual-identidad.html#tipografia-principal">
+                Tipografía principal
+            </a>
+            <a href="manual-identidad.html#tipografia-secundaria">
+                Tipografía secundaria
+            </a>
+            <a href="manual-identidad.html#anatomia-tipografia">
+                Anatomía de la tipografía
+            </a>
+            <a href="manual-identidad.html#colores">Colores</a>
+            <a href="manual-identidad.html#colores-institucionales">
+                Colores institucionales
+            </a>
+            <a href="manual-identidad.html#colores-secundarios">
+                Colores secundarios
+            </a>
+            <a href="manual-identidad.html#colores-complementarios">
+                Colores complementarios
+            </a>
+            <a href="manual-identidad.html#positivo-negativo">
+                Positivo y negativo
+            </a>
+            <a href="manual-identidad.html#escala-grises">
+                Escala de grises y alto contraste
+            </a>
+            <a href="manual-identidad.html#usabilidad">
+                Usabilidad
+            </a>
+            <a href="manual-identidad.html#variaciones-tamano">
+                Variaciones mínimas de tamaño
+            </a>
+            <a href="manual-identidad.html#fondos-composicion">
+                Fondos y elementos de composición
+            </a>
+        </div>
+    </div>
+
+
+    <!-- 10. PROPUESTAS DE MEJORA -->
+    <div class="nav-item dropdown-item" data-page="propuestas">
+        <a class="nav-link" href="propuestas-mejora.html">
+            Propuestas<br>de Mejora
+        </a>
+
+        <div class="dropdown-menu">
+            <a href="propuestas-mejora.html#estandarizacion">
+                Estandarización de la marca
+            </a>
+            <a href="propuestas-mejora.html#material-publicitario">
+                Material publicitario
+            </a>
+            <a href="propuestas-mejora.html#colores-tipografias">
+                Colores y tipografías
+            </a>
+            <a href="propuestas-mejora.html#redes-sociales">
+                Redes sociales
+            </a>
+        </div>
+    </div>
+
+
+    <!-- 11. COMUNICACIÓN CORPORATIVA -->
+    <div class="nav-item" data-page="comunicacion">
+        <a href="comunicación corporativa.html" class="nav-link">
+            Comunicación<br>Corporativa
+        </a>
+    </div>
+
+
+    <!-- 12. AUDITORÍA DE IMAGEN -->
+    <div class="nav-item" data-page="auditoria">
+        <a href="auditoria-imagen.html" class="nav-link">
+            Auditoría de<br>Imagen
+        </a>
+    </div>
+
+
+    <!-- 13. ANÁLISIS DE IMAGEN PÚBLICA -->
+    <div class="nav-item dropdown-item" data-page="analisis-imagen">
+        <a class="nav-link" href="analisis-imagen.html">
+            Análisis de<br>Imagen Pública
+        </a>
+
+        <div class="dropdown-menu">
+            <a href="analisis-imagen.html#inicio">Inicio</a>
+            <a href="analisis-imagen.html#contexto">Introducción</a>
+            <a href="analisis-imagen.html#objetivos">Objetivos</a>
+            <a href="analisis-imagen.html#marco">Marco teórico</a>
+            <a href="analisis-imagen.html#metodologia">Metodología</a>
+            <a href="analisis-imagen.html#identidad">
+                Identidad visual y corporativa
+            </a>
+            <a href="analisis-imagen.html#encuesta">
+                Percepción y satisfacción
+            </a>
+            <a href="analisis-imagen.html#reputacion">
+                Reputación digital
+            </a>
+            <a href="analisis-imagen.html#comunicacion">
+                Comunicación digital
+            </a>
+            <a href="analisis-imagen.html#foda">Matriz FODA</a>
+            <a href="analisis-imagen.html#plan">Plan de acción</a>
+            <a href="analisis-imagen.html#conclusiones">
+                Conclusiones
+            </a>
+            <a href="analisis-imagen.html#recomendaciones">
+                Recomendaciones
+            </a>
+            <a href="analisis-imagen.html#referencias">
+                Referencias
+            </a>
+        </div>
+    </div>
+
+
+    <!-- 14. IMAGOLOGÍA, ICONOLOGÍA E IMAGEN VERBAL -->
+    <div class="nav-item" data-page="imagologia">
+        <a
+            href="imagologia-iconologia-imagen-verbal.html"
+            class="nav-link"
+        >
+            Imagología ·<br>Iconología · Imagen verbal
+        </a>
+    </div>
+
+</nav>
+
+  
+
+  <!-- ==========================================================
+
+
+
+         CONTENIDO
+
+
+
+    =========================================================== -->
+
+  <main>
+
+   <!-- ======================================================
+
+
+
+             HERO
+
+
+
+        ======================================================= -->
+
+   <section class="institutional-hero">
+
+    <div class="hero-shape shape-one">
+
+    </div>
+
+    <div class="hero-shape shape-two">
+
+    </div>
+
+    <div class="hero-text">
+
+     <span class="section-kicker">
+
+      IMAGEN INSTITUCIONAL · SAMILU
+
+     </span>
+
+     <h2>
+
+      La percepción que
+
+      <em>
+
+       queremos construir
+
+      </em>
+
+     </h2>
+
+     <p>
+
+      La imagen institucional de SAMILU busca proyectar
+
+
+
+                    una marca moderna, responsable, sostenible e innovadora,
+
+
+
+                    vinculada con la miel, la naturaleza y el origen
+
+
+
+                    de la Selva Central.
+
+     </p>
+
+     <div class="hero-values">
+
+      <span>
+
+       Moderna
+
+      </span>
+
+      <span>
+
+       Responsable
+
+      </span>
+
+      <span>
+
+       Sostenible
+
+      </span>
+
+      <span>
+
+       Innovadora
+
+      </span>
+
+     </div>
+
+     <a class="hero-button" href="#percepcion-cliente">
+
+      Conocer la imagen de SAMILU
+
+      <span>
+
+       ↓
+
+      </span>
+
+     </a>
+
+    </div>
+
+    <div class="hero-image-area">
+
+     <div class="hero-image-frame">
+
+      <div class="image-slot hero-main-image-slot">
+
+        <img
+         class="hero-main-image"
+         src="img/1.png"
+         alt="Imagen principal de SAMILU"
+        />
+
+       </div>
+
+     </div>
+
+     <div class="floating-tag tag-one">
+
+      SAMILU
+
+     </div>
+
+     <div class="floating-tag tag-two">
+
+      Esencia amazónica
+
+     </div>
+
+    </div>
+
+   </section>
+
+   <!-- ======================================================
+
+
+
+             01 · PERCEPCIÓN DEL CLIENTE
+
+
+
+        ======================================================= -->
+
+   <section class="institutional-section perception-section" id="percepcion-cliente">
+
+    <!-- ==================================================
+
+
+
+                 TÍTULO
+
+
+
+            =================================================== -->
+
+    <div class="section-heading">
+
+     <span>
+
+      01 · PERCEPCIÓN
+
+     </span>
+
+     <h2>
+
+      ¿Cómo queremos
+
+      <em>
+
+       ser percibidos?
+
+      </em>
+
+     </h2>
+
+    </div>
+
+    <!-- ==================================================
+
+
+
+                 ESTRUCTURA PRINCIPAL
+
+
+
+            =================================================== -->
+
+    <div class="perception-layout">
+
+     <!-- ==================================================
+
+
+
+                     ÚNICO VISOR DE IMAGEN
+
+
+
+                     Aquí aparecerá:
+
+
+
+                     CALIDAD → imagen de calidad
+
+
+
+                     CERCANÍA → imagen de cercanía
+
+
+
+                     NATURALEZA → imagen de naturaleza
+
+
+
+                =================================================== -->
+
+     <div class="perception-image">
+
+      <div class="perception-image-view" id="perceptionImageView">
+
+       <img alt="Imagen representativa de SAMILU" id="perceptionCurrentImage" src="img/1.png" style="
+
+
+
+                display: block;
+
+
+
+                width: 100%;
+
+
+
+                height: 100%;
+
+
+
+                object-fit: contain;
+
+
+
+                object-position: center;
+
+
+
+                border-radius: inherit;
+
+
+
+            "/>
+
+      </div>
+
+     </div>
+
+     <!-- ==================================================
+
+
+
+                     INFORMACIÓN Y OPCIONES
+
+
+
+                =================================================== -->
+
+     <div class="perception-content">
+
+      <div class="perception-main">
+
+       <span class="big-number">
+
+        01
+
+       </span>
+
+       <h3>
+
+        Una marca cercana,
+
+
+
+                            moderna y confiable
+
+       </h3>
+
+       <p>
+
+        SAMILU busca ser percibida como una marca
+
+
+
+                            moderna, responsable, sostenible e innovadora,
+
+
+
+                            manteniendo una relación cercana con sus clientes.
+
+       </p>
+
+      </div>
+
+      <!-- ==================================================
+
+
+
+                         OPCIONES INTERACTIVAS
+
+
+
+                    =================================================== -->
+
+      <div class="perception-points">
+
+       <!-- ==============================================
+
+
+
+                             CALIDAD
+
+
+
+                        =============================================== -->
+
+       <button class="perception-option" data-image="img/VERBAL.png" data-title="Calidad" type="button">
+
+        <span class="option-number">
+
+         01
+
+        </span>
+
+        <div class="option-text">
+
+         <strong>
+
+          Calidad
+
+         </strong>
+
+         <span>
+
+          Productos asociados a una propuesta
+
+
+
+                                    confiable y cuidada.
+
+         </span>
+
+        </div>
+
+        <span class="option-arrow">
+
+         →
+
+        </span>
+
+       </button>
+
+       <!-- ==============================================
+
+
+
+                             CERCANÍA
+
+
+
+                        =============================================== -->
+
+       <button class="perception-option" data-image="img/cercania1.jpg" data-title="Cercanía" type="button">
+
+        <span class="option-number">
+
+         02
+
+        </span>
+
+        <div class="option-text">
+
+         <strong>
+
+          Cercanía
+
+         </strong>
+
+         <span>
+
+          Una comunicación amigable que genere
+
+
+
+                                    comodidad y confianza.
+
+         </span>
+
+        </div>
+
+        <span class="option-arrow">
+
+         →
+
+        </span>
+
+       </button>
+
+       <!-- ==============================================
+
+
+
+                             NATURALEZA
+
+
+
+                        =============================================== -->
+
+       <button class="perception-option" data-image="img/vision.png" data-title="Naturaleza" type="button">
+
+        <span class="option-number">
+
+         03
+
+        </span>
+
+        <div class="option-text">
+
+         <strong>
+
+          Naturaleza
+
+         </strong>
+
+         <span>
+
+          Una imagen vinculada con la miel y
+
+
+
+                                    la Selva Central.
+
+         </span>
+
+        </div>
+
+        <span class="option-arrow">
+
+         →
+
+        </span>
+
+       </button>
+
+      </div>
+
+     </div>
+
+    </div>
+
+   </section>
+
+   <!-- ======================================================
+
+
+
+             02 · FORTALEZAS
+
+
+
+        ======================================================= -->
+
+   <section class="institutional-section strengths-section" id="fortalezas">
+
+    <div class="strengths-heading">
+
+     <div>
+
+      <span>
+
+       02 · LO QUE NOS DIFERENCIA
+
+      </span>
+
+      <h2>
+
+       Fortalezas
+
+       <em>
+
+        de la marca
+
+       </em>
+
+      </h2>
+
+     </div>
+
+     <p>
+
+      SAMILU cuenta con elementos que permiten construir
+
+
+
+                    una imagen diferenciada y relacionada directamente
+
+
+
+                    con su actividad y origen.
+
+     </p>
+
+    </div>
+
+    <div class="strengths-grid">
+
+     <div class="strengths-grid text-feature-grid">
+
+      <article class="strength-card text-feature-card">
+
+       <span class="feature-index">
+
+        01
+
+       </span>
+
+       <div aria-hidden="true" class="feature-mark">
+
+        ⌖
+
+       </div>
+
+       <div class="strength-text">
+
+        <h3>
+
+         Origen regional
+
+        </h3>
+
+        <p>
+
+         La conexión con la Selva Central aporta a SAMILU un origen reconocible y una identidad propia que puede comunicar en sus productos y mensajes.
+
+        </p>
+
+       </div>
+
+      </article>
+
+      <article class="strength-card text-feature-card">
+
+       <span class="feature-index">
+
+        02
+
+       </span>
+
+       <div aria-hidden="true" class="feature-mark">
+
+        ✳
+
+       </div>
+
+       <div class="strength-text">
+
+        <h3>
+
+         Identidad reconocible
+
+        </h3>
+
+        <p>
+
+         La abeja, la miel, las hojas y los tonos cálidos relacionan visualmente la marca con la naturaleza y los productos que ofrece.
+
+        </p>
+
+       </div>
+
+      </article>
+
+      <article class="strength-card text-feature-card">
+
+       <span class="feature-index">
+
+        03
+
+       </span>
+
+       <div aria-hidden="true" class="feature-mark">
+
+        ✦
+
+       </div>
+
+       <div class="strength-text">
+
+        <h3>
+
+         Variedad de productos
+
+        </h3>
+
+        <p>
+
+         La miel saborizada, la crema untable y las barras energéticas amplían las formas de disfrutar los derivados de la miel.
+
+        </p>
+
+       </div>
+
+      </article>
+
+     </div>
+
+    </div>
+
+   </section>
+
+   <!-- ======================================================
+
+
+
+             03 · ASPECTOS POR MEJORAR
+
+
+
+        ======================================================= -->
+
+   <section class="institutional-section improvement-section" id="aspectos-mejorar">
+
+    <div class="improvement-header">
+
+     <span>
+
+      03 · EVOLUCIÓN DE LA MARCA
+
+     </span>
+
+     <h2>
+
+      Aspectos por
+
+      <em>
+
+       mejorar
+
+      </em>
+
+     </h2>
+
+     <p>
+
+      SAMILU puede fortalecer su imagen con una identidad coherente, mensajes claros y una presentación cuidada de sus productos.
+
+     </p>
+
+    </div>
+
+    <div class="improvement-layout">
+
+     <div class="improvement-layout text-only-layout">
+
+      <div class="improvement-list text-feature-grid">
+
+       <article class="improvement-item text-feature-card">
+
+        <span class="feature-index">
+
+         01
+
+        </span>
+
+        <div>
+
+         <h3>
+
+          Unificar la identidad
+
+         </h3>
+
+         <p>
+
+          Aplicar de forma consistente el logotipo, los colores y las tipografías en todos los materiales de SAMILU.
+
+         </p>
+
+        </div>
+
+       </article>
+
+       <article class="improvement-item text-feature-card">
+
+        <span class="feature-index">
+
+         02
+
+        </span>
+
+        <div>
+
+         <h3>
+
+          Ordenar la comunicación
+
+         </h3>
+
+         <p>
+
+          Mantener mensajes claros, cercanos y coherentes en redes sociales, etiquetas y atención al cliente.
+
+         </p>
+
+        </div>
+
+       </article>
+
+       <article class="improvement-item text-feature-card">
+
+        <span class="feature-index">
+
+         03
+
+        </span>
+
+        <div>
+
+         <h3>
+
+          Presentar mejor los productos
+
+         </h3>
+
+         <p>
+
+          Destacar la información de cada producto, su presentación y sus características con una jerarquía visual fácil de entender.
+
+         </p>
+
+        </div>
+
+       </article>
+
+      </div>
+
+     </div>
+
+    </div>
+
+   </section>
+
+   <!-- ======================================================
+
+
+
+             04 · DIMENSIONES DE LA IMAGEN
+
+
+
+        ======================================================= -->
+
+   <section class="institutional-section dimensions-section" id="dimensiones-imagen">
+
+    <div class="dimensions-header">
+
+     <span>
+
+      04 · DIMENSIONES
+
+     </span>
+
+     <h2>
+
+      La imagen se construye
+
+      <em>
+
+       desde varios puntos
+
+      </em>
+
+     </h2>
+
+     <p>
+
+      Las dimensiones muestran los ámbitos en los que las personas forman una opinión sobre SAMILU: sus productos, su responsabilidad, su relación con la comunidad y su manera de actuar como empresa.
+
+     </p>
+
+    </div>
+
+    <div class="dimensions-grid">
+
+     <div class="dimensions-grid dimensions-grid-five">
+
+      <article class="dimension-card dimension-product">
+
+       <span>
+
+        01
+
+       </span>
+
+       <div aria-hidden="true" class="dimension-icon">
+
+        🍯
+
+       </div>
+
+       <h3>
+
+        Comercial / De producto
+
+       </h3>
+
+       <p>
+
+        Cómo se perciben la calidad, la presentación, el precio y el valor de la miel saborizada, la crema untable y las barras energéticas de SAMILU.
+
+       </p>
+
+       <small>
+
+        PRODUCTOS Y VALOR
+
+       </small>
+
+      </article>
+
+      <article class="dimension-card dimension-financial">
+
+       <span>
+
+        02
+
+       </span>
+
+       <div aria-hidden="true" class="dimension-icon">
+
+        ↗
+
+       </div>
+
+       <h3>
+
+        Financiera
+
+       </h3>
+
+       <p>
+
+        La confianza que transmiten los precios claros, la información transparente y unas condiciones de compra que la marca pueda cumplir.
+
+       </p>
+
+       <small>
+
+        TRANSPARENCIA Y CONFIANZA
+
+       </small>
+
+      </article>
+
+      <article class="dimension-card dimension-social">
+
+       <span>
+
+        03
+
+       </span>
+
+       <div aria-hidden="true" class="dimension-icon">
+
+        🌿
+
+       </div>
+
+       <h3>
+
+        Social / Ciudadana
+
+       </h3>
+
+       <p>
+
+        La relación de SAMILU con la Selva Central y su compromiso con prácticas responsables hacia la comunidad y el entorno natural.
+
+       </p>
+
+       <small>
+
+        COMUNIDAD Y ENTORNO
+
+       </small>
+
+      </article>
+
+      <article class="dimension-card dimension-labor">
+
+       <span>
+
+        04
+
+       </span>
+
+       <div aria-hidden="true" class="dimension-icon">
+
+        ◎
+
+       </div>
+
+       <h3>
+
+        Interna / Laboral
+
+       </h3>
+
+       <p>
+
+        Cómo se vive la marca dentro del equipo: respeto, funciones claras, seguridad y orgullo por contribuir al proyecto SAMILU.
+
+       </p>
+
+       <small>
+
+        CULTURA DE TRABAJO
+
+       </small>
+
+      </article>
+
+      <article class="dimension-card dimension-corporate">
+
+       <span>
+
+        05
+
+       </span>
+
+       <div aria-hidden="true" class="dimension-icon">
+
+        ◆
+
+       </div>
+
+       <h3>
+
+        Institucional / Corporativa
+
+       </h3>
+
+       <p>
+
+        La opinión que se forma a partir de los valores, la conducta responsable y la coherencia entre lo que SAMILU comunica y ofrece.
+
+       </p>
+
+       <small>
+
+        VALORES Y COHERENCIA
+
+       </small>
+
+      </article>
+
+     </div>
+
+    </div>
+
+   </section>
+
+   <!-- ======================================================
+
+
+
+             05 · COMPONENTES DE LA IMAGEN
+
+
+
+        ======================================================= -->
+
+   <section class="institutional-section components-section" id="componentes-imagen">
+
+    <div class="components-header">
+
+     <div>
+
+      <span>
+
+       05 · COMPONENTES
+
+      </span>
+
+      <h2>
+
+       ¿De qué está hecha
+
+       <em>
+
+        la imagen de SAMILU
+
+       </em>
+
+       ?
+
+      </h2>
+
+     </div>
+
+     <p>
+
+      La percepción de SAMILU se forma con lo que el público conoce, las emociones que la marca despierta y las acciones que las personas consideran realizar.
+
+     </p>
+
+    </div>
+
+    <div class="components-layout">
+
+     <div class="components-layout text-only-layout">
+
+      <div class="components-grid components-grid-three">
+
+       <article class="component-card component-cognitive">
+
+        <span class="feature-index">
+
+         01
+
+        </span>
+
+        <div aria-hidden="true" class="component-symbol">
+
+         01
+
+        </div>
+
+        <span class="component-label">
+
+         CONOCER
+
+        </span>
+
+        <h3>
+
+         Componente cognitivo
+
+        </h3>
+
+        <p>
+
+         Lo que el público sabe o cree saber de SAMILU: su origen en la Selva Central, sus productos derivados de la miel, sus presentaciones y la información que comunica.
+
+        </p>
+
+       </article>
+
+       <article class="component-card component-affective">
+
+        <span class="feature-index">
+
+         02
+
+        </span>
+
+        <div aria-hidden="true" class="component-symbol">
+
+         ♥
+
+        </div>
+
+        <span class="component-label">
+
+         SENTIR
+
+        </span>
+
+        <h3>
+
+         Componente afectivo
+
+        </h3>
+
+        <p>
+
+         Las emociones que SAMILU busca generar: cercanía, confianza y conexión con la naturaleza mediante su identidad, sus mensajes y la experiencia de compra.
+
+        </p>
+
+       </article>
+
+       <article class="component-card component-behavioral">
+
+        <span class="feature-index">
+
+         03
+
+        </span>
+
+        <div aria-hidden="true" class="component-symbol">
+
+         →
+
+        </div>
+
+        <span class="component-label">
+
+         ACTUAR
+
+        </span>
+
+        <h3>
+
+         Componente conductual o conativo
+
+        </h3>
+
+        <p>
+
+         La disposición que surge de lo que se conoce y se siente: consultar, comprar, volver a elegir o recomendar los productos de SAMILU.
+
+        </p>
+
+       </article>
+
+      </div>
+
+     </div>
+
+    </div>
+
+   </section>
+
+   <!-- ======================================================
+
+
+
+             CIERRE
+
+
+
+        ======================================================= -->
+
+   <section class="institutional-closing">
+
+    <span>
+
+     IMAGEN INSTITUCIONAL · SAMILU
+
+    </span>
+
+    <h2>
+
+     Una imagen coherente
+
+     <em>
+
+      genera confianza.
+
+     </em>
+
+    </h2>
+
+    <p>
+
+     La identidad visual, la comunicación, la experiencia
+
+
+
+                y el origen de la marca deben trabajar juntos para
+
+
+
+                construir una percepción sólida de SAMILU.
+
+    </p>
+
+   </section>
+
+  </main>
+
+  <!-- ==========================================================
+
+
+
+         FOOTER
+
+
+
+    =========================================================== -->
+
+  <footer class="site-footer">
+
+   <div class="footer-logo">
+
+    <img alt="SAMILU" src="img/logo samilu.png"/>
+
+   </div>
+
+   <div class="footer-info">
+
+    <h3>
+
+     SAMILU
+
+    </h3>
+
+    <p>
+
+     Sabor Amazónico, Miel y Luz S.A.C.
+
+    </p>
+
+    <span>
+
+     Productos derivados de la miel · Selva Central, Junín
+
+    </span>
+
+   </div>
+
+   <div class="footer-quote">
+
+    El sabor natural de la Selva Central.
+
+   </div>
+
+  </footer>
+
+  <!-- ==========================================================
+
+
+
+         BOTÓN VOLVER ARRIBA
+
+
+
+    =========================================================== -->
+
+  <button aria-label="Volver arriba" class="back-top" id="backTop">
+
+   ↑
+
+  </button>
+
+  <!-- ==========================================================
+
+
+
+         JAVASCRIPT
+
+
+
+    =========================================================== -->
+
+  <script src="imagen-institucional.js">
+
+  </script>
+
+ </body>
+
+</html>
