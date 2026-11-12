@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fbf5e8">
+  <meta name="description" content="Imagología, iconología e imagen verbal de SAMILU. Identidad de marca, paleta cromática, símbolos y comunicación.">
+  <title>Imagología · Iconología · Imagen Verbal | SAMILU</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos de todo el sitio (la sección 24 corresponde a esta página) -->
+  <link rel="stylesheet" href="imagologia.css">
+  <script src="imagologia.js" defer data-preview="%VITE_PREVIEW%"></script>
+</head>
+
+<body class="has-chapters">
+
+<!-- =====================================================================
+     ICONOS (se usan así: <svg class="icon"><use href="#i-arrow"/></svg>)
+====================================================================== -->
+<svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-expand" viewBox="0 0 24 24"><path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+</svg>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+
+<!-- =====================================================================
+     ENCABEZADO Y NAVEGACIÓN DEL SITIO
+     Barra horizontal con desplegables en escritorio.
+     En móvil, el botón «Menú» despliega la misma lista.
+     El apartado actual lleva aria-current="page".
+====================================================================== -->
+<header class="header">
+  <div class="header__inner">
+    <a class="header__logo" href="https://k71559676-bit.github.io/Sami/" aria-label="Volver al inicio de SAMILU">
+      <img src="img/logo-samilu.png" alt="Logotipo oficial de SAMILU" width="480" height="226">
+    </a>
+
+    <p class="header__title">
+      <span class="label">Imagología · Iconología · Imagen verbal</span>
+      <span class="header__dot" aria-hidden="true">·</span>
+      <span class="header__company">Sabor Amazónico, Miel y Luz S.A.C.</span>
+    </p>
+
+    <button class="ig-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="navbar">
+      <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      <span>Menú</span>
+    </button>
+  </div>
+
+  <div class="header__progress" aria-hidden="true">
+    <div class="header__progress-bar" id="progress-bar"></div>
+  </div>
+</header>
+
+<nav class="navbar" id="navbar" aria-label="Navegación principal">
+
+  <div class="nav-item">
+    <a class="nav-link" href="https://k71559676-bit.github.io/Sami/">Inicio</a>
+  </div>
+
+  <div class="nav-item dropdown-item">
+    <div class="nav-button">
+      <a class="nav-link" href="empresa.html">Empresa</a>
+      <button class="nav-caret" type="button" aria-expanded="false" aria-label="Apartados de Empresa"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+    </div>
+    <div class="dropdown-menu">
+      <a href="empresa.html#datos">Datos de la empresa</a>
+      <a href="empresa.html#descripcion">Descripción de la empresa</a>
+      <a href="empresa.html#mision">Misión</a>
+      <a href="empresa.html#vision">Visión</a>
+      <a href="empresa.html#valores">Valores corporativos</a>
+    </div>
+  </div>
+
+  <div class="nav-item dropdown-item">
+    <div class="nav-button">
+      <a class="nav-link" href="publico-objetivo.html">Público objetivo</a>
+      <button class="nav-caret" type="button" aria-expanded="false" aria-label="Apartados de Público objetivo"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+    </div>
+    <div class="dropdown-menu">
+      <a href="publico-objetivo.html#segmento">Segmento objetivo</a>
+      <a href="publico-objetivo.html#edad">Edad</a>
+      <a href="publico-objetivo.html#ubicacion">Ubicación</a>
+      <a href="publico-objetivo.html#necesidades">Necesidades</a>
+      <a href="publico-objetivo.html#caracteristicas">Características</a>
+    </div>
+  </div>
+
+  <div class="nav-item dropdown-item">
+    <div class="nav-button">
+      <a class="nav-link" href="identidad-corporativa.html">Identidad corporativa</a>
+      <button class="nav-caret" type="button" aria-expanded="false" aria-label="Apartados de Identidad corporativa"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+    </div>
+    <div class="dropdown-menu">
+      <a href="identidad-corporativa.html#imagen-corporativa">¿Qué es la imagen corporativa?</a>
+      <a href="identidad-corporativa.html#elementos-identidad">Elementos de identidad</a>
+      <a href="identidad-corporativa.html#tipos-identidad">Tipos de identidad</a>
+      <a href="identidad-corporativa.html#identidad-cultural">Identidad cultural</a>
+      <a href="identidad-corporativa.html#identidad-verbal">Identidad verbal</a>
+      <a href="identidad-corporativa.html#identidad-corporativa">Identidad corporativa</a>
+    </div>
+  </div>
+
+  <div class="nav-item dropdown-item">
+    <div class="nav-button">
+      <a class="nav-link" href="identidad-visual.html">Identidad visual</a>
+      <button class="nav-caret" type="button" aria-expanded="false" aria-label="Apartados de Identidad visual"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+    </div>
+    <div class="dropdown-menu">
+      <a href="identidad-visual.html#imagotipo">Imagotipo</a>
+      <a href="identidad-visual.html#bocetos-proceso">Bocetos y proceso de creación</a>
+      <a href="identidad-visual.html#colores-corporativos">Colores corporativos</a>
+      <a href="identidad-visual.html#tipografia">Tipografía</a>
+      <a href="identidad-visual.html#elementos-graficos">Elementos gráficos</a>
+      <a href="identidad-visual.html#uniformes">Uniformes</a>
+      <a href="identidad-visual.html#empaques">Empaques</a>
+      <a href="identidad-visual.html#letreros">Letreros</a>
+      <a href="identidad-visual.html#decoracion">Decoración</a>
+    </div>
+  </div>
+
+  <div class="nav-item dropdown-item">
+    <div class="nav-button">
+      <a class="nav-link" href="imagen-institucional.html">Imagen institucional</a>
+      <button class="nav-caret" type="button" aria-expanded="false" aria-label="Apartados de Imagen institucional"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+    </div>
+    <div class="dropdown-menu">
+      <a href="imagen-institucional.html#percepcion-cliente">Percepción del cliente</a>
+      <a href="imagen-institucional.html#fortalezas">Fortalezas</a>
+      <a href="imagen-institucional.html#aspectos-mejorar">Aspectos por mejorar</a>
+      <a href="imagen-institucional.html#dimensiones-imagen">Dimensiones de la imagen</a>
+      <a href="imagen-institucional.html#componentes-imagen">Componentes de la imagen</a>
+    </div>
+  </div>
+
+  <div class="nav-item dropdown-item">
+    <div class="nav-button">
+      <a class="nav-link" href="aplicaciones.html">Aplicaciones</a>
+      <button class="nav-caret" type="button" aria-expanded="false" aria-label="Apartados de Aplicaciones"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+    </div>
+    <div class="dropdown-menu">
+      <a href="aplicaciones.html#tarjetas">Tarjetas</a>
+      <a href="aplicaciones.html#vasos-empaques">Vasos y empaques</a>
+      <a href="aplicaciones.html#uniformes">Uniformes</a>
+      <a href="aplicaciones.html#afiches">Afiches</a>
+      <a href="aplicaciones.html#redes-sociales">Redes sociales</a>
+      <a href="aplicaciones.html#sitio-web">Sitio web</a>
+    </div>
+  </div>
+
+  <div class="nav-item dropdown-item">
+    <div class="nav-button">
+      <a class="nav-link" href="comunicaciones.html">Comunicaciones</a>
+      <button class="nav-caret" type="button" aria-expanded="false" aria-label="Apartados de Comunicaciones"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+    </div>
+    <div class="dropdown-menu">
+      <a href="comunicaciones.html#lenguaje-corporativo">Lenguaje corporativo</a>
+      <a href="comunicaciones.html#canales-comunicacion">Canales de comunicación</a>
+      <a href="comunicaciones.html#mensaje-principal">Mensaje principal</a>
+      <a href="comunicaciones.html#eslogan">Eslogan</a>
+    </div>
+  </div>
+
+  <div class="nav-item dropdown-item">
+    <div class="nav-button">
+      <a class="nav-link" href="manual-identidad.html">Manual de identidad corporativa</a>
+      <button class="nav-caret" type="button" aria-expanded="false" aria-label="Apartados de Manual de identidad corporativa"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+    </div>
+    <div class="dropdown-menu">
+      <a href="manual-identidad.html#identidad-visual">Identidad visual</a>
+      <a href="manual-identidad.html#identidad-verbal">Identidad verbal</a>
+      <a href="manual-identidad.html#imagotipo">Imagotipo</a>
+      <a href="manual-identidad.html#logotipo">Logotipo</a>
+      <a href="manual-identidad.html#presentacion-logotipo">Presentación del logotipo</a>
+      <a href="manual-identidad.html#estructura-composicion">Estructura y composición</a>
+      <a href="manual-identidad.html#area-proteccion">Área de protección</a>
+      <a href="manual-identidad.html#tipografia">Tipografía</a>
+      <a href="manual-identidad.html#tipografia-principal">Tipografía principal</a>
+      <a href="manual-identidad.html#tipografia-secundaria">Tipografía secundaria</a>
+      <a href="manual-identidad.html#anatomia-tipografia">Anatomía de la tipografía</a>
+      <a href="manual-identidad.html#colores">Colores</a>
+      <a href="manual-identidad.html#colores-institucionales">Colores institucionales</a>
+      <a href="manual-identidad.html#colores-secundarios">Colores secundarios</a>
+      <a href="manual-identidad.html#colores-complementarios">Colores complementarios</a>
+      <a href="manual-identidad.html#positivo-negativo">Positivo y negativo</a>
+      <a href="manual-identidad.html#escala-grises">Escala de grises y alto contraste</a>
+      <a href="manual-identidad.html#usabilidad">Usabilidad</a>
+      <a href="manual-identidad.html#variaciones-tamano">Variaciones mínimas de tamaño</a>
+      <a href="manual-identidad.html#fondos-composicion">Fondos y elementos de composición</a>
+    </div>
+  </div>
+
+  <div class="nav-item dropdown-item">
+    <div class="nav-button">
+      <a class="nav-link" href="propuestas-mejora.html">Propuestas de mejora</a>
+      <button class="nav-caret" type="button" aria-expanded="false" aria-label="Apartados de Propuestas de mejora"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+    </div>
+    <div class="dropdown-menu">
+      <a href="propuestas-mejora.html#estandarizacion">Estandarización de la marca</a>
+      <a href="propuestas-mejora.html#material-publicitario">Material publicitario</a>
+      <a href="propuestas-mejora.html#colores-tipografias">Colores y tipografías</a>
+      <a href="propuestas-mejora.html#redes-sociales">Redes sociales</a>
+    </div>
+  </div>
+
+  <div class="nav-item">
+    <a class="nav-link" href="comunicación%20corporativa.html">Comunicación corporativa</a>
+  </div>
+
+  <div class="nav-item dropdown-item">
+    <div class="nav-button">
+      <a class="nav-link" href="auditoria-imagen.html">Auditoría de imagen</a>
+      <button class="nav-caret" type="button" aria-expanded="false" aria-label="Apartados de Auditoría de imagen"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+    </div>
+    <div class="dropdown-menu">
+      <a href="auditoria-imagen.html#investigacion">Investigación</a>
+      <a href="auditoria-imagen.html#proceso">Proceso de auditoría</a>
+      <a href="auditoria-imagen.html#plan">Plan de investigación</a>
+      <a href="auditoria-imagen.html#foda">Autoanálisis y FODA</a>
+      <a href="auditoria-imagen.html#acciones">Propuestas y acciones</a>
+      <a href="auditoria-imagen.html#conclusiones">Conclusiones</a>
+    </div>
+  </div>
+
+  <div class="nav-item dropdown-item">
+    <div class="nav-button">
+      <a class="nav-link" href="analisis-imagen.html">Análisis de imagen pública</a>
+      <button class="nav-caret" type="button" aria-expanded="false" aria-label="Apartados de Análisis de imagen pública"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+    </div>
+    <div class="dropdown-menu">
+      <a href="analisis-imagen.html#inicio">Inicio</a>
+      <a href="analisis-imagen.html#contexto">Introducción</a>
+      <a href="analisis-imagen.html#objetivos">Objetivos</a>
+      <a href="analisis-imagen.html#marco">Marco teórico</a>
+      <a href="analisis-imagen.html#metodologia">Metodología</a>
+      <a href="analisis-imagen.html#identidad">Identidad visual y corporativa</a>
+      <a href="analisis-imagen.html#encuesta">Percepción y satisfacción</a>
+      <a href="analisis-imagen.html#reputacion">Reputación digital</a>
+      <a href="analisis-imagen.html#comunicacion">Comunicación digital</a>
+      <a href="analisis-imagen.html#foda">Matriz FODA</a>
+      <a href="analisis-imagen.html#plan">Plan de acción</a>
+      <a href="analisis-imagen.html#conclusiones">Conclusiones</a>
+      <a href="analisis-imagen.html#recomendaciones">Recomendaciones</a>
+      <a href="analisis-imagen.html#referencias">Referencias</a>
+    </div>
+  </div>
+
+  <div class="nav-item dropdown-item is-current">
+    <div class="nav-button">
+      <a class="nav-link" href="index.html" aria-current="page">Imagología · Iconología · Imagen verbal</a>
+      <button class="nav-caret" type="button" aria-expanded="false" aria-label="Apartados de esta página"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"/></svg></button>
+    </div>
+    <div class="dropdown-menu">
+      <a href="#ficha">Ficha técnica</a>
+      <a href="#imagologia">Imagología</a>
+      <a href="#paleta">Paleta cromática</a>
+      <a href="#iconologia">Iconología</a>
+      <a href="#imagen-verbal">Imagen verbal</a>
+      <a href="#ejercicio-imagen-verbal">Ejercicio de imagen verbal</a>
+      <a href="#cuadro-comparativo">Cuadro comparativo</a>
+      <a href="#conclusion">Conclusión</a>
+    </div>
+  </div>
+
+</nav>
+
+
+<main id="contenido">
+
+<!-- =====================================================================
+     PORTADA
+====================================================================== -->
+<section class="ig-hero" id="inicio" aria-labelledby="hero-title">
+  <div class="ig-hero__pattern" aria-hidden="true"></div>
+
+  <div class="container ig-hero__grid">
+
+    <div class="ig-hero__copy">
+      <p class="label label--mark">Ficha técnica de identidad de marca</p>
+
+      <h1 class="ig-hero__title" id="hero-title">
+        SAMILU
+        <span>Imagología · Iconología · Imagen verbal</span>
+      </h1>
+
+      <p class="ig-hero__lead">
+        Miel, naturaleza y Selva Central: una identidad que conecta lo visual, lo simbólico y lo verbal.
+      </p>
+
+      <!-- Una identidad, tres miradas: cada una lleva a su capítulo -->
+      <p class="label lenses__title">Identidad · tres miradas</p>
+      <ol class="lenses">
+        <li><a href="#imagologia"><small>Percepción</small><b>Imagología</b><span>cómo se percibe</span></a></li>
+        <li><a href="#iconologia"><small>Símbolos</small><b>Iconología</b><span>qué significa</span></a></li>
+        <li><a href="#imagen-verbal"><small>Comunicación</small><b>Imagen verbal</b><span>qué dice</span></a></li>
+      </ol>
+
+      <div class="ig-hero__actions">
+        <a class="btn btn--solid" href="#ficha">
+          Explorar identidad
+          <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </a>
+      </div>
+
+      <p class="ig-author">
+        Elaborado por: Kenely Kristell Villanueva Fonseca
+        <span>SENATI · Diseño Gráfico Digital</span>
+      </p>
+    </div>
+
+    <figure class="ig-hero__visual">
+      <button class="zoom ig-hero__photo" type="button" data-zoom
+              data-caption="SAMILU: productos derivados de la miel en un entorno natural">
+        <img src="img/hero-selva.jpg" alt="Productos SAMILU en un paisaje natural de la Selva Central" width="1100" height="820" fetchpriority="high">
+        <span class="zoom__badge" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+      </button>
+      <span class="ig-chip ig-chip--honey">Miel natural</span>
+      <span class="ig-chip ig-chip--leaf">Selva Central</span>
+      <figcaption class="ig-hero__caption">
+        <strong>El sabor natural de la Selva Central.</strong>
+        <span>Sabor Amazónico, Miel y Luz S.A.C.</span>
+      </figcaption>
+    </figure>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     ÍNDICE DE CAPÍTULOS
+     Queda fijo bajo el encabezado. js/script.js resalta el capítulo que
+     se está leyendo (lee los enlaces de #menu-sections).
+====================================================================== -->
+<nav class="chapters" id="menu-sections" aria-label="Capítulos de la ficha">
+  <a href="#ficha" data-num="00"><span>00</span>Ficha</a>
+  <a href="#imagologia" data-num="01"><span>01</span>Imagología</a>
+  <a href="#paleta" data-num="02"><span>02</span>Colores</a>
+  <a href="#iconologia" data-num="03"><span>03</span>Iconología</a>
+  <a href="#imagen-verbal" data-num="04"><span>04</span>Imagen verbal</a>
+  <a href="#ejercicio-imagen-verbal" data-num="05"><span>05</span>Ejercicio</a>
+  <a href="#cuadro-comparativo" data-num="06"><span>06</span>Comparativo</a>
+  <a href="#conclusion" data-num="07"><span>07</span>Conclusión</a>
+</nav>
+
+
+<!-- =====================================================================
+     00 · FICHA TÉCNICA DE LA MARCA
+====================================================================== -->
+<section class="section section--cream" id="ficha" aria-labelledby="ficha-title">
+  <div class="container">
+
+    <p class="label label--mark">00 · Identidad de marca</p>
+    <h2 class="title" id="ficha-title">Ficha técnica de <em>SAMILU</em></h2>
+
+    <!-- Cuatro datos clave: un bloque de referencia, no tarjetas -->
+    <dl class="facts" data-reveal>
+      <div>
+        <dt>Nombre de marca</dt>
+        <dd class="facts__value">SAMILU</dd>
+        <dd>Sabor Amazónico, Miel y Luz S.A.C.</dd>
+      </div>
+      <div>
+        <dt>Rubro</dt>
+        <dd class="facts__value">Derivados de la miel</dd>
+        <dd>Elaboración y venta de productos derivados de la miel.</dd>
+      </div>
+      <div>
+        <dt>Concepto</dt>
+        <dd class="facts__value">Miel y naturaleza</dd>
+        <dd>Inspirado en la Selva Central.</dd>
+      </div>
+      <div>
+        <dt>Eslogan</dt>
+        <dd class="facts__value">El sabor natural</dd>
+        <dd>«El sabor natural de la Selva Central».</dd>
+      </div>
+    </dl>
+
+    <!-- Portafolio: tres productos escalonados -->
+    <div class="ig-products" data-reveal>
+      <div>
+        <p class="label">Portafolio de productos</p>
+        <h3 class="ig-products__title">Tres formas de disfrutar la miel</h3>
+        <p class="muted">La marca presenta crema untable, barras energéticas y miel saborizada.</p>
+      </div>
+
+      <ul class="ig-products__list">
+        <li>
+          <figure>
+            <button class="zoom" type="button" data-zoom data-caption="Crema untable SAMILU">
+              <img src="IMG/crema untable.jpeg" alt="Crema untable SAMILU" loading="lazy">
+              <span class="zoom__badge" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+            </button>
+            <figcaption>Crema untable</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <button class="zoom" type="button" data-zoom data-caption="Barra energética SAMILU">
+              <img src="IMG/barra.jpeg" alt="Barra energética SAMILU" loading="lazy">
+              <span class="zoom__badge" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+            </button>
+            <figcaption>Barras energéticas</figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <button class="zoom" type="button" data-zoom data-caption="Miel saborizada SAMILU">
+              <img src="img/miel-saborizada.jpg" alt="Miel saborizada SAMILU" loading="lazy">
+              <span class="zoom__badge" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+            </button>
+            <figcaption>Miel saborizada</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Estilo y personalidad -->
+    <div class="ig-personality" data-reveal>
+      <div>
+        <p class="label">Estilo gráfico</p>
+        <p class="ig-personality__big">Orgánico, cálido y moderno</p>
+      </div>
+      <div>
+        <p class="label">Personalidad</p>
+        <ul class="tags">
+          <li>Cálida</li>
+          <li>Moderna</li>
+          <li>Cercana</li>
+          <li>Innovadora</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     01 · IMAGOLOGÍA
+====================================================================== -->
+<section class="section section--paper" id="imagologia" aria-labelledby="imagologia-title">
+  <div class="container">
+
+    <p class="label label--mark">01 · Percepción de marca</p>
+    <h2 class="title" id="imagologia-title">Imagología: <em>cómo se percibe SAMILU</em></h2>
+
+    <div class="ig-imago">
+
+      <!-- Imagen de marca con su paleta -->
+      <div data-reveal>
+        <button class="zoom figure__frame figure__frame--4x3" type="button" data-zoom
+                data-caption="Imagen de marca SAMILU: miel, productos y naturaleza">
+          <img src="img/hero-selva.jpg" alt="Composición visual de SAMILU con productos y naturaleza" loading="lazy">
+          <span class="zoom__badge" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+        </button>
+        <ul class="ig-swatches" aria-label="Colores corporativos">
+          <li style="--c:#FAB902"><b>Dorado</b><small>#FAB902</small></li>
+          <li style="--c:#722E01"><b>Marrón</b><small>#722E01</small></li>
+          <li style="--c:#19681E"><b>Selva</b><small>#19681E</small></li>
+          <li style="--c:#70B123"><b>Hoja</b><small>#70B123</small></li>
+          <li style="--c:#FDF6D3"><b>Crema</b><small>#FDF6D3</small></li>
+        </ul>
+      </div>
+
+      <div data-reveal>
+        <blockquote class="ig-quote">
+          <p>La imagología estudia cómo se construye y percibe la imagen de una marca ante el público.</p>
+        </blockquote>
+
+        <div class="ig-audience">
+          <p class="label">¿A quién le habla?</p>
+          <p>Jóvenes y adultos de 18 a 50 años, principalmente de la Selva Central y otras zonas del Perú, que buscan productos naturales, prácticos, innovadores y con sabores diferentes.</p>
+        </div>
+
+        <p class="label ig-subtitle">Percepción deseada</p>
+        <div class="ig-flow">
+          <div class="ig-flow__in">
+            <span>Miel</span>
+            <span>Naturaleza</span>
+            <span>Origen en la Selva Central</span>
+          </div>
+          <span class="ig-flow__arrow" aria-hidden="true">↓</span>
+          <p class="ig-flow__out">Recordar la marca por su calidad y sus sabores innovadores</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Cómo se proyecta la imagen -->
+    <p class="label ig-subtitle">La imagen se proyecta en tres frentes</p>
+    <div class="ig-project" data-reveal>
+      <article>
+        <p class="label">Forma</p>
+        <p>Abeja, cucharón con miel, gotas y hojas, integrados al nombre.</p>
+      </article>
+      <article>
+        <p class="label">Color</p>
+        <p>Dorado, marrón, verdes y crema.</p>
+      </article>
+      <article>
+        <p class="label">Contacto</p>
+        <p>Frascos, empaques, afiches, redes sociales y material promocional.</p>
+      </article>
+    </div>
+
+    <p class="ig-tone" data-reveal>
+      Calidez · Cercanía · Modernidad
+      <span>Así el público puede reconocer a la marca en cada punto de contacto.</span>
+    </p>
+
+    <div class="ig-callout" data-reveal>
+      <p class="label">Resultado esperado</p>
+      <p>Una marca reconocible que transmita calidad, naturalidad e innovación, y que el público relacione con la miel y con el sabor de la Selva Central.</p>
+    </div>
+
+    <details class="ig-acc" data-reveal>
+      <summary>Ficha técnica completa de imagología
+        <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+      </summary>
+      <dl class="ig-spec">
+        <div><dt>Objetivo</dt><dd>Transmitir una imagen natural, cálida, moderna y confiable, relacionada con la miel y el origen de la Selva Central.</dd></div>
+        <div><dt>Aplicación</dt><dd>Construcción de la imagen corporativa de SAMILU.</dd></div>
+        <div><dt>Identidad visual</dt><dd>Imagotipo que integra el nombre SAMILU con una abeja, un cucharón de miel, gotas de miel y dos hojas.</dd></div>
+        <div><dt>Colores corporativos</dt><dd>Dorado, marrón, verde oscuro, verde claro y crema.</dd></div>
+        <div><dt>Personalidad</dt><dd>Moderna, responsable, sostenible e innovadora, con un trato cálido y cercano.</dd></div>
+        <div><dt>Percepción deseada</dt><dd>Que el consumidor relacione la marca con la miel, la naturaleza y el sabor de la Selva Central, y la recuerde por la calidad de sus productos y sus sabores innovadores.</dd></div>
+      </dl>
+    </details>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     02 · PALETA CROMÁTICA
+     Franja interactiva: al elegir un color se muestran sus valores.
+====================================================================== -->
+<section class="section section--cream" id="paleta" aria-labelledby="paleta-title">
+  <div class="container">
+
+    <p class="label label--mark">02 · Sistema de color</p>
+    <h2 class="title" id="paleta-title">Paleta cromática <em>de SAMILU</em></h2>
+    <p class="ig-intro">
+      La paleta conecta la marca con la miel, la tierra, la vegetación y la frescura.
+      <span class="muted">Elige un color para ver sus valores técnicos.</span>
+    </p>
+
+    <div class="ig-palette" data-tabs data-reveal>
+
+      <div class="ig-stripe" role="tablist" aria-label="Colores corporativos">
+        <button class="ig-stripe__seg" role="tab" type="button" id="pal-tab-1" aria-controls="pal-panel-1" aria-selected="true" style="--c:#FAB902; --w:3"><span>Miel</span></button>
+        <button class="ig-stripe__seg ig-stripe__seg--dark" role="tab" type="button" id="pal-tab-2" aria-controls="pal-panel-2" aria-selected="false" tabindex="-1" style="--c:#722E01; --w:2.5"><span>Tierra</span></button>
+        <button class="ig-stripe__seg ig-stripe__seg--dark" role="tab" type="button" id="pal-tab-3" aria-controls="pal-panel-3" aria-selected="false" tabindex="-1" style="--c:#19681E; --w:2"><span>Selva</span></button>
+        <button class="ig-stripe__seg" role="tab" type="button" id="pal-tab-4" aria-controls="pal-panel-4" aria-selected="false" tabindex="-1" style="--c:#70B123; --w:2"><span>Hoja</span></button>
+        <button class="ig-stripe__seg" role="tab" type="button" id="pal-tab-5" aria-controls="pal-panel-5" aria-selected="false" tabindex="-1" style="--c:#FDF6D3; --w:1.5"><span>Crema</span></button>
+      </div>
+
+      <div class="ig-palette__panels">
+
+        <article class="ig-color" role="tabpanel" id="pal-panel-1" aria-labelledby="pal-tab-1" tabindex="0">
+          <div class="ig-color__swatch" style="--c:#FAB902" aria-hidden="true"></div>
+          <div class="swap">
+            <p class="label">Color principal · Miel</p>
+            <h3>Dorado</h3>
+            <p>Representa la miel, la calidez y el carácter principal de SAMILU.</p>
+            <dl class="ig-codes">
+              <div><dt>HEX</dt><dd>#FAB902</dd></div>
+              <div><dt>RGB</dt><dd>250 · 180 · 2</dd></div>
+              <div><dt>CMYK</dt><dd>2 · 30 · 100 · 0</dd></div>
+            </dl>
+            <button class="btn btn--outline" type="button" data-copy="#FAB902">Copiar HEX</button>
+          </div>
+        </article>
+
+        <article class="ig-color" role="tabpanel" id="pal-panel-2" aria-labelledby="pal-tab-2" tabindex="0" hidden>
+          <div class="ig-color__swatch" style="--c:#722E01" aria-hidden="true"></div>
+          <div class="swap">
+            <p class="label">Color de apoyo · Tierra</p>
+            <h3>Marrón</h3>
+            <p>Comunica confianza, calidad y conexión con los elementos naturales.</p>
+            <dl class="ig-codes">
+              <div><dt>HEX</dt><dd>#722E01</dd></div>
+              <div><dt>RGB</dt><dd>114 · 46 · 1</dd></div>
+              <div><dt>CMYK</dt><dd>37 · 80 · 100 · 52</dd></div>
+            </dl>
+            <button class="btn btn--outline" type="button" data-copy="#722E01">Copiar HEX</button>
+          </div>
+        </article>
+
+        <article class="ig-color" role="tabpanel" id="pal-panel-3" aria-labelledby="pal-tab-3" tabindex="0" hidden>
+          <div class="ig-color__swatch" style="--c:#19681E" aria-hidden="true"></div>
+          <div class="swap">
+            <p class="label">Color natural · Selva</p>
+            <h3>Verde oscuro</h3>
+            <p>Refuerza la naturaleza, el origen regional y la identidad de la Selva Central.</p>
+            <dl class="ig-codes">
+              <div><dt>HEX</dt><dd>#19681E</dd></div>
+              <div><dt>RGB</dt><dd>25 · 104 · 30</dd></div>
+              <div><dt>CMYK</dt><dd>89 · 35 · 100 · 31</dd></div>
+            </dl>
+            <button class="btn btn--outline" type="button" data-copy="#19681E">Copiar HEX</button>
+          </div>
+        </article>
+
+        <article class="ig-color" role="tabpanel" id="pal-panel-4" aria-labelledby="pal-tab-4" tabindex="0" hidden>
+          <div class="ig-color__swatch" style="--c:#70B123" aria-hidden="true"></div>
+          <div class="swap">
+            <p class="label">Color de frescura · Hoja</p>
+            <h3>Verde claro</h3>
+            <p>Aporta frescura, naturaleza y una sensación visual más luminosa.</p>
+            <dl class="ig-codes">
+              <div><dt>HEX</dt><dd>#70B123</dd></div>
+              <div><dt>RGB</dt><dd>112 · 177 · 35</dd></div>
+              <div><dt>CMYK</dt><dd>64 · 7 · 100 · 0</dd></div>
+            </dl>
+            <button class="btn btn--outline" type="button" data-copy="#70B123">Copiar HEX</button>
+          </div>
+        </article>
+
+        <article class="ig-color" role="tabpanel" id="pal-panel-5" aria-labelledby="pal-tab-5" tabindex="0" hidden>
+          <div class="ig-color__swatch ig-color__swatch--light" style="--c:#FDF6D3" aria-hidden="true"></div>
+          <div class="swap">
+            <p class="label">Color neutro · Crema</p>
+            <h3>Crema</h3>
+            <p>Tono de apoyo para crear espacios cálidos y limpios.</p>
+            <dl class="ig-codes">
+              <div><dt>HEX</dt><dd>#FDF6D3</dd></div>
+              <div><dt>RGB</dt><dd>253 · 246 · 211</dd></div>
+              <div><dt>CMYK</dt><dd>1 · 1 · 20 · 0</dd></div>
+            </dl>
+            <button class="btn btn--outline" type="button" data-copy="#FDF6D3">Copiar HEX</button>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <div class="ig-words" data-reveal>
+      <span class="label">Identidad cromática</span>
+      <span class="ig-words__dots" aria-hidden="true">
+        <i style="--c:#FAB902"></i><i style="--c:#722E01"></i><i style="--c:#19681E"></i><i style="--c:#70B123"></i><i style="--c:#FDF6D3"></i>
+      </span>
+      <strong>Miel · Naturaleza · Confianza · Frescura · Origen regional</strong>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     03 · ICONOLOGÍA
+     Cuatro símbolos y la tipografía: cada uno se voltea para mostrar su significado.
+====================================================================== -->
+<section class="section section--paper" id="iconologia" aria-labelledby="iconologia-title">
+  <div class="container">
+
+    <p class="label label--mark">03 · Universo simbólico</p>
+    <h2 class="title" id="iconologia-title">Iconología: <em>qué significa cada símbolo</em></h2>
+
+    <div class="ig-icon-show">
+
+      <div data-reveal>
+        <button class="zoom ig-logo-frame" type="button" data-zoom
+                data-caption="Imagotipo oficial de SAMILU: abeja, cucharón de miel, gotas y hojas">
+          <!-- Cada número señala un elemento. Posición: left / top en % sobre el logotipo -->
+          <span class="ig-logo-stage">
+            <img src="img/logo-samilu.png" alt="Imagotipo oficial de SAMILU" loading="lazy">
+            <span class="anatomy__dot" data-part="1" style="left: 37%; top: 7%" aria-hidden="true">1</span>
+            <span class="anatomy__dot" data-part="2" style="left: 13%; top: 6%" aria-hidden="true">2</span>
+            <span class="anatomy__dot" data-part="3" style="left: 65.5%; top: 93%" aria-hidden="true">3</span>
+            <span class="anatomy__dot" data-part="4" style="left: 93%; top: 13%" aria-hidden="true">4</span>
+            <span class="anatomy__dot" data-part="5" style="left: 47%; top: 62%" aria-hidden="true">5</span>
+          </span>
+          <span class="zoom__badge" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+        </button>
+        <p class="ig-logo-caption"><span>Símbolo principal de marca</span> <strong>Abeja · Miel · Gotas · Hojas</strong></p>
+      </div>
+
+      <div data-reveal>
+        <p class="ig-quote">Una composición que representa la esencia de la marca.</p>
+        <p class="ig-body">
+          La iconología interpreta los significados simbólicos y culturales de las imágenes.
+          En SAMILU, sus símbolos se relacionan con la miel, la naturaleza y la Selva Central,
+          para transmitir identidad, calidez y conexión con la naturaleza.
+        </p>
+        <p class="ig-chip-line"><span>Estilo gráfico</span> Ilustración orgánica, redondeada y amigable.</p>
+      </div>
+
+    </div>
+
+    <!-- Símbolos que se voltean: toca cada uno para ver su significado -->
+    <p class="ig-subtitle label">Toca cada símbolo: verás su significado y su lugar en el imagotipo</p>
+
+    <div class="ig-flips">
+
+      <button class="ig-flip" type="button" data-part="1" aria-expanded="false">
+        <span class="ig-flip__inner">
+          <span class="ig-flip__face ig-flip__front">
+            <span class="ig-flip__num" aria-hidden="true">1</span>
+            <span class="ig-flip__art">
+              <svg viewBox="0 0 120 100" aria-hidden="true">
+                <ellipse cx="48" cy="29" rx="18" ry="13" fill="#FBECCF" stroke="#4A1B01" stroke-width="3"/>
+                <ellipse cx="73" cy="29" rx="18" ry="13" fill="#FBECCF" stroke="#4A1B01" stroke-width="3"/>
+                <ellipse cx="60" cy="59" rx="29" ry="21" fill="#F9A600" stroke="#4A1B01" stroke-width="4"/>
+                <path d="M48 40 L48 78 M65 39 L65 79" stroke="#4A1B01" stroke-width="8"/>
+                <circle cx="93" cy="54" r="13" fill="#F9A600" stroke="#4A1B01" stroke-width="4"/>
+                <circle cx="98" cy="51" r="2.8" fill="#4A1B01"/>
+                <path d="M91 40 Q90 24 101 21" fill="none" stroke="#4A1B01" stroke-width="3" stroke-linecap="round"/>
+                <path d="M103 40 Q110 28 116 31" fill="none" stroke="#4A1B01" stroke-width="3" stroke-linecap="round"/>
+                <path d="M30 57 L19 49 L18 69 Z" fill="#F9A600" stroke="#4A1B01" stroke-width="3"/>
+              </svg>
+            </span>
+            <strong class="ig-flip__name">Abeja</strong>
+            <small class="ig-flip__hint">Toca para ver el significado</small>
+          </span>
+          <span class="ig-flip__face ig-flip__back">
+            <strong class="ig-flip__name">Abeja</strong>
+            <p>Representa la producción de miel y la actividad apícola.</p>
+          </span>
+        </span>
+      </button>
+
+      <button class="ig-flip" type="button" data-part="2" aria-expanded="false">
+        <span class="ig-flip__inner">
+          <span class="ig-flip__face ig-flip__front">
+            <span class="ig-flip__num" aria-hidden="true">2</span>
+            <span class="ig-flip__art">
+              <svg viewBox="0 0 120 100" aria-hidden="true">
+                <path d="M51 49 L94 87" fill="none" stroke="#722E01" stroke-width="12" stroke-linecap="round"/>
+                <path d="M28 19 C15 19 11 34 20 43 C28 53 43 51 50 43 C60 31 48 18 28 19 Z" fill="#F9A600" stroke="#722E01" stroke-width="4"/>
+                <path d="M25 24 L38 40 M32 21 L45 35 M20 31 L33 45" fill="none" stroke="#722E01" stroke-width="3" stroke-linecap="round"/>
+                <path d="M62 69 Q55 78 61 85 Q68 93 74 85" fill="#F9A600" stroke="#722E01" stroke-width="2"/>
+              </svg>
+            </span>
+            <strong class="ig-flip__name">Cucharón de miel</strong>
+            <small class="ig-flip__hint">Toca para ver el significado</small>
+          </span>
+          <span class="ig-flip__face ig-flip__back">
+            <strong class="ig-flip__name">Cucharón de miel</strong>
+            <p>Refuerza la relación directa con la miel e identifica la actividad principal de la marca.</p>
+          </span>
+        </span>
+      </button>
+
+      <button class="ig-flip" type="button" data-part="3" aria-expanded="false">
+        <span class="ig-flip__inner">
+          <span class="ig-flip__face ig-flip__front">
+            <span class="ig-flip__num" aria-hidden="true">3</span>
+            <span class="ig-flip__art">
+              <svg viewBox="0 0 120 100" aria-hidden="true">
+                <path d="M34 15 C34 15 14 43 14 57 C14 73 25 84 40 84 C55 84 66 73 66 57 C66 43 34 15 34 15 Z" fill="#F9A600" stroke="#722E01" stroke-width="4"/>
+                <path d="M77 31 C77 31 61 52 61 64 C61 77 70 85 82 85 C94 85 103 77 103 64 C103 52 77 31 77 31 Z" fill="#FBB222" stroke="#722E01" stroke-width="4"/>
+                <path d="M27 57 Q29 45 38 37" fill="none" stroke="#FFFDF7" stroke-width="4" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <strong class="ig-flip__name">Gotas de miel</strong>
+            <small class="ig-flip__hint">Toca para ver el significado</small>
+          </span>
+          <span class="ig-flip__face ig-flip__back">
+            <strong class="ig-flip__name">Gotas de miel</strong>
+            <p>Complementan la composición y refuerzan el concepto del producto.</p>
+          </span>
+        </span>
+      </button>
+
+      <button class="ig-flip" type="button" data-part="4" aria-expanded="false">
+        <span class="ig-flip__inner">
+          <span class="ig-flip__face ig-flip__front">
+            <span class="ig-flip__num" aria-hidden="true">4</span>
+            <span class="ig-flip__art">
+              <svg viewBox="0 0 120 100" aria-hidden="true">
+                <path d="M21 83 Q49 52 97 15" fill="none" stroke="#3D6B14" stroke-width="5" stroke-linecap="round"/>
+                <path d="M45 61 C12 61 10 33 18 18 C40 17 60 31 45 61 Z" fill="#70B123" stroke="#3D6B14" stroke-width="3"/>
+                <path d="M57 49 C51 18 77 8 104 12 C105 37 87 54 57 49 Z" fill="#6CAD28" stroke="#3D6B14" stroke-width="3"/>
+                <path d="M25 25 Q36 38 44 56 M95 19 Q78 31 60 47" fill="none" stroke="#DCE5A3" stroke-width="3"/>
+              </svg>
+            </span>
+            <strong class="ig-flip__name">Hojas</strong>
+            <small class="ig-flip__hint">Toca para ver el significado</small>
+          </span>
+          <span class="ig-flip__face ig-flip__back">
+            <strong class="ig-flip__name">Hojas</strong>
+            <p>Representan la naturaleza y el origen de la Selva Central.</p>
+          </span>
+        </span>
+      </button>
+
+      <button class="ig-flip ig-flip--wide" type="button" data-part="5" aria-expanded="false">
+        <span class="ig-flip__inner">
+          <span class="ig-flip__face ig-flip__front">
+            <span class="ig-flip__num" aria-hidden="true">5</span>
+            <span class="ig-flip__type" aria-hidden="true">Aa</span>
+            <strong class="ig-flip__name">Tipografía redondeada</strong>
+            <small class="ig-flip__hint">Toca para ver el significado</small>
+          </span>
+          <span class="ig-flip__face ig-flip__back">
+            <strong class="ig-flip__name">samilu</strong>
+            <p>Formas redondeadas y expresivas: transmite una personalidad moderna, cercana, creativa y natural.</p>
+          </span>
+        </span>
+      </button>
+
+    </div>
+
+    <div class="ig-callout ig-callout--light" data-reveal>
+      <p class="label">Análisis de la marca</p>
+      <p>La abeja, el cucharón con gotas de miel y las hojas relacionan el producto con su origen natural y regional. La tipografía redondeada Copyduck aporta una apariencia amigable y cercana.</p>
+    </div>
+
+    <div class="ig-callout" data-reveal>
+      <p class="label">Resultado esperado</p>
+      <p>Una identidad gráfica con símbolos reconocibles y significados relacionados con la esencia de SAMILU.</p>
+    </div>
+
+    <details class="ig-acc" data-reveal>
+      <summary>Ficha técnica de iconología
+        <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+      </summary>
+      <dl class="ig-spec">
+        <div><dt>Definición</dt><dd>Estudia e interpreta los significados simbólicos y culturales de las imágenes.</dd></div>
+        <div><dt>Aplicación</dt><dd>Uso de símbolos relacionados con la miel, la naturaleza y la Selva Central.</dd></div>
+        <div><dt>Objetivo</dt><dd>Transmitir identidad, calidez y conexión con la naturaleza mediante elementos gráficos.</dd></div>
+        <div><dt>Símbolo principal</dt><dd>Abeja y cucharón de miel integrados al nombre SAMILU.</dd></div>
+        <div><dt>Elementos secundarios</dt><dd>Gotas de miel, hojas y formas redondeadas.</dd></div>
+        <div><dt>Significado</dt><dd>Representar el origen conceptual de la marca, su producto principal (la miel) y su origen regional (la Selva Central).</dd></div>
+      </dl>
+    </details>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     04 · IMAGEN VERBAL
+====================================================================== -->
+<section class="section section--cream" id="imagen-verbal" aria-labelledby="imagen-verbal-title">
+  <div class="container">
+
+    <p class="label label--mark">04 · Personalidad comunicativa</p>
+    <h2 class="title" id="imagen-verbal-title">Imagen verbal: <em>cómo habla SAMILU</em></h2>
+    <p class="ig-intro">Un lenguaje cercano, amigable y sencillo que genera confianza y refuerza la identidad en redes sociales, publicidad y empaques.</p>
+
+    <!-- Mensaje principal y eslogan -->
+    <div class="ig-statement" data-reveal>
+      <div class="ig-statement__pattern" aria-hidden="true"></div>
+      <p class="label">Mensaje principal</p>
+      <blockquote class="ig-statement__quote">
+        La esencia de la Selva Central <em>en cada sabor.</em>
+      </blockquote>
+      <p class="ig-statement__sign">
+        <span class="label">Eslogan</span>
+        «El sabor natural de la Selva Central».
+      </p>
+    </div>
+
+    <!-- Nombre -->
+    <div class="ig-name" data-reveal>
+      <p class="label">Nombre de marca</p>
+      <p class="ig-acronym" aria-label="Sabor Amazónico, Miel y Luz">
+        <span>Sabor</span><span>Amazónico</span><span>Miel</span><span>y Luz</span>
+      </p>
+    </div>
+
+    <!-- Así habla SAMILU -->
+    <div class="ig-voice" data-reveal>
+      <p class="label">Así habla SAMILU</p>
+      <div class="ig-bubbles">
+        <p class="ig-bubble">«Hola, conoce nuestros sabores».</p>
+        <p class="ig-bubble">«Productos naturales, pensados para ti».</p>
+        <p class="ig-bubble">«Descubre la esencia de la Selva Central».</p>
+      </div>
+    </div>
+
+    <div class="ig-verbal" data-reveal>
+
+      <div>
+        <p class="label">Palabras clave</p>
+        <ul class="tags">
+          <li>Miel</li><li>Naturaleza</li><li>Selva Central</li><li>Sabor</li>
+          <li>Calidez</li><li>Calidad</li><li>Innovación</li><li>Cercanía</li>
+        </ul>
+
+        <dl class="ig-spec ig-spec--tight">
+          <div><dt>Tono comunicativo</dt><dd>Cercano, amigable y sencillo, que transmite confianza y calidad.</dd></div>
+          <div><dt>Estilo verbal</dt><dd>Sencillo, cercano y natural.</dd></div>
+          <div><dt>Tipografía propuesta</dt><dd>Copyduck para el nombre SAMILU y Fredoka para textos informativos.</dd></div>
+          <div><dt>Dónde se aplica</dt><dd>Nombre comercial, eslogan, publicidad, empaques y redes sociales (Facebook, Instagram y TikTok).</dd></div>
+        </dl>
+      </div>
+
+      <!-- Ejemplo publicitario -->
+      <article class="ig-ad">
+        <button class="zoom ig-ad__photo" type="button" data-zoom data-caption="Miel saborizada SAMILU: identidad verbal y presentación del producto">
+          <img src="img/miel-saborizada.jpg" alt="Presentación de miel saborizada SAMILU" loading="lazy">
+          <span class="zoom__badge" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+        </button>
+        <div class="ig-ad__top">
+          <span class="label">Ejemplo de mensaje publicitario</span>
+          <strong>SAMILU</strong>
+        </div>
+        <div class="ig-ad__body">
+          <h3>Conoce nuestros sabores</h3>
+          <p>«Hola, conoce nuestros sabores. Crema untable, barras energéticas y miel saborizada: la esencia de la Selva Central en cada sabor. SAMILU, el sabor natural de la Selva Central».</p>
+        </div>
+        <p class="ig-ad__foot">El sabor natural de la Selva Central.</p>
+      </article>
+
+    </div>
+
+    <div class="ig-callout" data-reveal>
+      <p class="label">Resultado esperado</p>
+      <p>Una comunicación coherente, cercana y fácil de recordar que permita identificar la personalidad de la marca.</p>
+    </div>
+
+    <details class="ig-acc" data-reveal>
+      <summary>Ficha técnica de imagen verbal
+        <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+      </summary>
+      <dl class="ig-spec">
+        <div><dt>Definición</dt><dd>Conjunto de palabras, frases, mensajes y expresiones que construyen la identidad comunicativa de una marca.</dd></div>
+        <div><dt>Objetivo</dt><dd>Comunicar la personalidad y los valores de SAMILU mediante palabras.</dd></div>
+        <div><dt>Nombre</dt><dd>SAMILU (Sabor Amazónico, Miel y Luz).</dd></div>
+        <div><dt>Eslogan</dt><dd>«El sabor natural de la Selva Central».</dd></div>
+        <div><dt>Mensaje principal</dt><dd>«La esencia de la Selva Central en cada sabor».</dd></div>
+      </dl>
+    </details>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     05 · EJERCICIO: DE UNA FRASE A UNA IMAGEN VERBAL
+====================================================================== -->
+<section class="section section--paper" id="ejercicio-imagen-verbal" aria-labelledby="ejercicio-title">
+  <div class="container">
+
+    <p class="label label--mark">05 · Ejercicio de aplicación</p>
+    <h2 class="title" id="ejercicio-title">De una frase a <em>una imagen verbal</em></h2>
+    <p class="ig-intro">Transformar una frase en un mensaje que permita imaginar, sentir y recordar SAMILU.</p>
+
+    <!-- Diagrama: frase → qué imaginar → imagen verbal -->
+    <div class="ig-transform" data-reveal>
+      <div class="ig-step">
+        <p class="label">Frase de partida</p>
+        <p>«La esencia de la Selva Central en cada sabor».</p>
+      </div>
+      <span class="ig-arrow ig-arrow--right" aria-hidden="true">→</span>
+      <span class="ig-arrow ig-arrow--down" aria-hidden="true">↓</span>
+      <div class="ig-step ig-step--mid">
+        <p class="label">Qué imaginar</p>
+        <ul class="ig-chips">
+          <li>Color dorado</li>
+          <li>Miel que cae despacio</li>
+          <li>Frescura de las hojas</li>
+          <li>Calidez de la Selva Central</li>
+        </ul>
+      </div>
+      <span class="ig-arrow ig-arrow--right" aria-hidden="true">→</span>
+      <span class="ig-arrow ig-arrow--down" aria-hidden="true">↓</span>
+      <div class="ig-step ig-step--end">
+        <p class="label">Imagen verbal · propuesta</p>
+        <p>«Una cucharada de miel dorada que cae despacio, con la frescura de las hojas y la calidez de la Selva Central: así sabe SAMILU».</p>
+      </div>
+    </div>
+
+<!-- =====================================================
+     RECUADRO PARA IMAGEN DE LA FRASE
+====================================================== -->
+
+<figure class="ig-phrase-image" data-reveal>
+
+    <button
+        class="zoom ig-phrase-image__button"
+        type="button"
+        data-zoom
+        data-caption="Representación visual de la imagen verbal de SAMILU"
+        aria-label="Ampliar imagen de la frase de SAMILU"
+    >
+
+        <!-- CAMBIA EL NOMBRE DEL ARCHIVO POR EL DE TU IMAGEN -->
+        <img
+            src="IMG/imagen-frase-samilu.png"
+            alt="Representación visual de una cucharada de miel dorada, hojas frescas y la naturaleza de la Selva Central"
+            loading="lazy"
+        >
+
+        <span class="zoom__badge" aria-hidden="true">
+            <svg class="icon">
+                <use href="#i-expand"/>
+            </svg>
+        </span>
+
+    </button>
+
+    <figcaption>
+        <span>REPRESENTACIÓN VISUAL</span>
+        <strong>
+            La miel dorada, la frescura de las hojas y la calidez de la Selva Central.
+        </strong>
+    </figcaption>
+
+</figure>
+
+    <!-- Palabras clave: cinco pestañas con su frase -->
+    <p class="ig-subtitle label">Palabras clave y su imagen</p>
+
+    <div class="ig-word-tabs" data-tabs data-reveal>
+      <div role="tablist" aria-label="Palabras clave" class="ig-word-tabs__list">
+        <button class="ig-word-tab" role="tab" type="button" id="word-tab-1" aria-controls="word-panel-1" aria-selected="true">Miel</button>
+        <button class="ig-word-tab" role="tab" type="button" id="word-tab-2" aria-controls="word-panel-2" aria-selected="false" tabindex="-1">Selva Central</button>
+        <button class="ig-word-tab" role="tab" type="button" id="word-tab-3" aria-controls="word-panel-3" aria-selected="false" tabindex="-1">Sabor</button>
+        <button class="ig-word-tab" role="tab" type="button" id="word-tab-4" aria-controls="word-panel-4" aria-selected="false" tabindex="-1">Naturaleza</button>
+        <button class="ig-word-tab" role="tab" type="button" id="word-tab-5" aria-controls="word-panel-5" aria-selected="false" tabindex="-1">Energía</button>
+      </div>
+
+      <div class="ig-word-panel" role="tabpanel" id="word-panel-1" aria-labelledby="word-tab-1" tabindex="0">
+        <div class="swap">
+          <span class="badge badge--honey">Propuesta</span>
+          <blockquote><p>«Miel dorada que cae despacio, con la calidez de la Selva Central».</p></blockquote>
+        </div>
+      </div>
+      <div class="ig-word-panel" role="tabpanel" id="word-panel-2" aria-labelledby="word-tab-2" tabindex="0" hidden>
+        <div class="swap">
+          <span class="badge badge--leaf">Texto de la marca</span>
+          <blockquote><p>«Descubre la esencia de la Selva Central».</p></blockquote>
+        </div>
+      </div>
+      <div class="ig-word-panel" role="tabpanel" id="word-panel-3" aria-labelledby="word-tab-3" tabindex="0" hidden>
+        <div class="swap">
+          <span class="badge badge--leaf">Texto de la marca</span>
+          <blockquote><p>«Sabores que te conectan con la naturaleza».</p></blockquote>
+        </div>
+      </div>
+      <div class="ig-word-panel" role="tabpanel" id="word-panel-4" aria-labelledby="word-tab-4" tabindex="0" hidden>
+        <div class="swap">
+          <span class="badge badge--leaf">Texto de la marca</span>
+          <blockquote><p>«Productos naturales, pensados para ti».</p></blockquote>
+        </div>
+      </div>
+      <div class="ig-word-panel" role="tabpanel" id="word-panel-5" aria-labelledby="word-tab-5" tabindex="0" hidden>
+        <div class="swap">
+          <span class="badge badge--leaf">Texto de la marca</span>
+          <blockquote><p>«Una opción práctica y deliciosa para recargar energía».</p></blockquote>
+        </div>
+      </div>
+    </div>
+
+    <!-- Criterios del ejercicio -->
+    <ul class="ig-criteria" data-reveal>
+      <li>
+        <h3>Lenguaje sencillo y cercano</h3>
+        <p>Todas las frases mantienen un tono directo y fácil de recordar.</p>
+      </li>
+      <li>
+        <h3>Imágenes que el público reconoce</h3>
+        <p>El color dorado, el movimiento lento de la miel y la frescura de la naturaleza.</p>
+      </li>
+      <li>
+        <h3>Origen de cada frase</h3>
+        <p>Selva Central, Sabor, Naturaleza y Energía provienen de los textos que ya usa la marca. La de Miel y la imagen verbal principal son propuestas de este ejercicio.</p>
+      </li>
+    </ul>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     06 · CUADRO COMPARATIVO
+     Las tres miradas alrededor de la marca.
+====================================================================== -->
+<section class="section section--cream" id="cuadro-comparativo" aria-labelledby="comparativo-title">
+  <div class="container">
+
+    <p class="label label--mark">06 · Síntesis de identidad</p>
+    <h2 class="title" id="comparativo-title">Tres miradas, <em>una marca</em></h2>
+
+    <div class="ig-compare">
+
+      <article class="ig-compare__col ig-compare__col--imago">
+        <p class="label">01 · Percepción</p>
+        <h3>Imagología</h3>
+        <p class="ig-q">¿Qué siente el público?</p>
+        <p>Construye la percepción e imagen de SAMILU como una marca natural, cálida, moderna y cercana.</p>
+      </article>
+
+      <span class="ig-compare__hub hex" aria-hidden="true">S</span>
+
+      <article class="ig-compare__col ig-compare__col--icon">
+        <p class="label">02 · Significado</p>
+        <h3>Iconología</h3>
+        <p class="ig-q">¿Qué representa?</p>
+        <p>Da significado a los símbolos y elementos gráficos: la abeja, el cucharón, las gotas de miel y las hojas.</p>
+      </article>
+
+      <span class="ig-compare__hub hex" aria-hidden="true">S</span>
+
+      <article class="ig-compare__col ig-compare__col--verbal">
+        <p class="label">03 · Comunicación</p>
+        <h3>Imagen verbal</h3>
+        <p class="ig-q">¿Qué dice?</p>
+        <p>Comunica la personalidad de SAMILU mediante su nombre, eslogan y mensajes.</p>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     07 · CONCLUSIÓN
+====================================================================== -->
+<section class="section section--forest ig-end on-dark" id="conclusion" aria-labelledby="conclusion-title">
+  <div class="container">
+
+    <p class="label label--mark">07 · Conclusión general</p>
+    <h2 class="title" id="conclusion-title">Una identidad que une la miel, la naturaleza y <em>la Selva Central.</em></h2>
+
+    <ol class="ig-end__steps" data-reveal>
+      <li><b>Imagología</b><span>proyecta una imagen natural, cálida y moderna.</span></li>
+      <li><b>Iconología</b><span>aporta significado con la abeja, el cucharón, las gotas y las hojas.</span></li>
+      <li><b>Imagen verbal</b><span>transmite los valores mediante el nombre, el eslogan y los mensajes.</span></li>
+    </ol>
+
+    <p class="ig-end__text" data-reveal>
+      Así, SAMILU construye una identidad visual y comunicativa propia, coherente y reconocible en sus
+      productos, empaques y redes sociales.
+    </p>
+
+    <div class="ig-end__sign" data-reveal>
+      <img src="img/logo-samilu.png" alt="Logotipo de SAMILU" width="480" height="226" loading="lazy">
+      <strong>El sabor natural de la Selva Central.</strong>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+
+<!-- =====================================================================
+     PIE DE PÁGINA
+====================================================================== -->
+<footer class="footer on-dark">
+  <div class="container footer__inner">
+    <a class="footer__brand" href="#inicio">SAMILU<span>.</span></a>
+    <p class="muted">Sabor Amazónico, Miel y Luz S.A.C. · Productos derivados de la miel · Selva Central, Junín</p>
+    <a class="footer__top" href="#inicio">
+      Volver arriba
+      <svg class="icon icon--sm icon--up" aria-hidden="true"><use href="#i-arrow"/></svg>
+    </a>
+  </div>
+  <p class="footer__legal">© SAMILU · Imagología · Iconología · Imagen verbal</p>
+</footer>
+
+
+<!-- =====================================================================
+     VISOR AMPLIADO DE IMÁGENES
+     Lo usan todos los botones con data-zoom.
+====================================================================== -->
+<div class="lightbox on-dark" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
+  <div class="lightbox__bar">
+    <p class="label lightbox__counter" id="lightbox-counter">1 / 1</p>
+    <button class="lightbox__close" type="button" id="lightbox-close">
+      <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+      Cerrar
+    </button>
+  </div>
+  <div class="lightbox__stage" id="lightbox-stage">
+    <img class="lightbox__image" id="lightbox-image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
+  </div>
+  <div class="lightbox__controls">
+    <button class="lightbox__nav" type="button" id="lightbox-prev" aria-label="Imagen anterior">
+      <svg class="icon icon--left" aria-hidden="true"><use href="#i-arrow"/></svg>
+    </button>
+    <p class="lightbox__caption" id="lightbox-caption" aria-live="polite"></p>
+    <button class="lightbox__nav" type="button" id="lightbox-next" aria-label="Imagen siguiente">
+      <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- Aviso de copiado -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+</body>
+</html>
