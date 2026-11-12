@@ -1,0 +1,1991 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Análisis de imagen pública de SAMILU">
+  <meta name="theme-color" content="#fbf5e8">
+  <title>Análisis de Imagen Pública | SAMILU</title>
+
+  <!-- Icono de la pestaña (hexágono de miel) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 114'%3E%3Cpolygon points='50,5 95,31 95,83 50,109 5,83 5,31' fill='%23f9a600' stroke='%234a1b01' stroke-width='8' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+  <!-- Tipografía: Fredoka -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="analisis-imagen.css">
+</head>
+
+<body>
+
+<!-- =====================================================================
+     ICONOS
+     Se definen una sola vez y se usan así:
+     <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+====================================================================== -->
+<svg class="sprite" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-expand" viewBox="0 0 24 24"><path d="M9 4H4v5M15 4h5v5M9 20H4v-5M15 20h5v-5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M8 16L18 6M9 6h9v9"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4l9 15.5H3zM12 10v4M12 17h.01"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7zM14 3v4h4M10 12h5M10 16h5"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12zM12 9.5a2.5 2.5 0 100 5 2.5 2.5 0 000-5z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4zM8 9.5h8M8 12.5h5"/></symbol>
+  <symbol id="i-screen" viewBox="0 0 24 24"><path d="M3 5h18v11H3zM9 20h6M12 16v4"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.8z"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM12 7.5V12l3 2"/></symbol>
+  <symbol id="i-jar" viewBox="0 0 24 24"><path d="M8 4h8v3H8zM7 7h10l1 3v9a1 1 0 01-1 1H7a1 1 0 01-1-1v-9zM6 13h12"/></symbol>
+  <symbol id="i-smile" viewBox="0 0 24 24"><path d="M12 3a9 9 0 100 18 9 9 0 000-18zM8.5 14.5c1 1.2 2.2 1.8 3.5 1.8s2.5-.6 3.5-1.8M9 10h.01M15 10h.01"/></symbol>
+</svg>
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+
+<!-- =====================================================================
+     ENCABEZADO FIJO
+     Logotipo · nombre del informe · sección actual · botón de menú
+====================================================================== -->
+<header class="header">
+  <div class="header__inner">
+
+    <a class="header__logo" href="#inicio" aria-label="SAMILU: ir al inicio del informe">
+      <img src="img/logo-samilu.png" alt="" width="480" height="226">
+    </a>
+
+    <p class="header__title">
+      <span class="label">Análisis de imagen pública</span>
+      <span class="header__dot" aria-hidden="true">·</span>
+      <span class="header__company">Sabor Amazónico, Miel y Luz S.A.C.</span>
+    </p>
+
+    <!-- El número y el nombre de la sección actual los actualiza js/script.js -->
+    <button class="header__menu-btn" id="menu-open" type="button" aria-haspopup="dialog" aria-expanded="false" aria-label="Abrir menú. Sección actual: Inicio">
+      <span class="header__current">
+        <span class="header__current-num" id="current-num">00</span>
+        <span class="header__current-label" id="current-label">Inicio</span>
+      </span>
+      <span class="header__divider" aria-hidden="true"></span>
+      <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg>
+      <span class="header__menu-text">Menú</span>
+    </button>
+
+  </div>
+
+  <!-- Barra de progreso de lectura -->
+  <div class="header__progress" aria-hidden="true">
+    <div class="header__progress-bar" id="progress-bar"></div>
+  </div>
+</header>
+
+
+<main id="contenido">
+
+<!-- =====================================================================
+     PORTADA (BANNER)
+====================================================================== -->
+<section class="hero" id="inicio" tabindex="-1" aria-labelledby="hero-title">
+  <div class="hero__pattern" aria-hidden="true"></div>
+  <div class="hero__glow" aria-hidden="true"></div>
+
+  <div class="hero__grid">
+
+    <!-- Texto -->
+    <div class="hero__copy">
+      <p class="label label--mark hero__enter">Informe estratégico · SAMILU</p>
+
+      <h1 class="hero__title hero__enter" id="hero-title" style="--d: 80ms">
+        Una marca que <em>deja huella.</em>
+      </h1>
+
+      <p class="hero__lead hero__enter" style="--d: 160ms">
+        Identidad, reputación y experiencia del cliente.
+      </p>
+
+      <ul class="hero__tags hero__enter" style="--d: 240ms">
+        <li><a class="pill" href="#identidad">Identidad corporativa</a></li>
+        <li><a class="pill" href="#encuesta">Percepción del consumidor</a></li>
+        <li><a class="pill" href="#reputacion">Reputación digital</a></li>
+      </ul>
+
+      <div class="hero__actions hero__enter" style="--d: 320ms">
+        <a class="hero__cta" href="#contexto">
+          Comenzar recorrido
+          <span class="hero__cta-icon"><svg class="icon icon--down" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Composición: fotografía + etiqueta de marca -->
+    <div class="hero__visual hero__enter" style="--d: 280ms">
+      <span class="hex hero__hex hero__hex--honey" aria-hidden="true"></span>
+      <span class="hex hero__hex hero__hex--leaf" aria-hidden="true"></span>
+
+      <div class="hero__photo">
+        <img src="img/hero-selva.jpg"
+             alt="Productos SAMILU frente al paisaje de la Selva Central"
+             width="1100" height="820" fetchpriority="high">
+      </div>
+
+      <div class="brand-card hero__card">
+        <p class="label brand-card__label">Informe estratégico</p>
+        <img class="brand-card__logo" src="img/logo-samilu.png" alt="Logotipo de SAMILU" width="480" height="226">
+        <p class="brand-card__company">Sabor Amazónico, Miel y Luz S.A.C.</p>
+        <p class="label brand-card__place">Selva Central · Junín</p>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="label hero__hint">
+    Desliza para descubrir el análisis
+    <svg class="icon icon--sm icon--down" aria-hidden="true"><use href="#i-arrow"/></svg>
+  </p>
+</section>
+
+
+<!-- =====================================================================
+     RESUMEN EJECUTIVO
+     Diagrama: cuatro análisis → un plan → un propósito
+====================================================================== -->
+<section class="executive on-dark" aria-labelledby="resumen-title">
+  <div class="executive__pattern" aria-hidden="true"></div>
+
+  <div class="container executive__inner">
+
+    <div class="executive__head">
+      <div class="executive__intro" data-reveal>
+        <p class="label label--mark">Resumen ejecutivo</p>
+        <h2 class="title" id="resumen-title">Una visión integral de <em>SAMILU</em></h2>
+        <p class="executive__lead">
+          Una evaluación <strong>cuantitativa y cualitativa</strong> de su imagen pública:
+          cuatro análisis que respaldan un plan de acción.
+        </p>
+      </div>
+
+      <!-- Cifras del informe -->
+      <dl class="executive__stats" data-reveal>
+        <div class="stat"><dt>pilares estratégicos</dt><dd>6</dd></div>
+        <div class="stat"><dt>personas encuestadas</dt><dd>10</dd></div>
+        <div class="stat"><dt>canales digitales evaluados</dt><dd>3</dd></div>
+        <div class="stat"><dt>conclusiones principales</dt><dd>5</dd></div>
+      </dl>
+    </div>
+
+    <!-- Cómo se relacionan las partes del informe -->
+    <div class="flow" data-reveal>
+
+      <div class="flow__stage">
+        <p class="label flow__label">Cuatro análisis</p>
+        <ul class="flow__inputs">
+          <li><a href="#identidad"><span>Identidad corporativa</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          <li><a href="#encuesta"><span>Percepción del consumidor</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          <li><a href="#reputacion"><span>Reputación digital</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          <li><a href="#foda"><span>Matriz FODA</span><svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+        </ul>
+      </div>
+
+      <p class="flow__link"><span>respaldan</span></p>
+
+      <a class="flow__plan" href="#plan">
+        <span class="hex flow__plan-hex">6</span>
+        <span class="flow__plan-text">
+          <strong>Plan de acción estratégico</strong>
+          <span>de seis pilares</span>
+        </span>
+      </a>
+
+      <p class="flow__link"><span>orientado al</span></p>
+
+      <div class="flow__goal">
+        <p class="label flow__label">Propósito</p>
+        <p class="flow__goal-text">
+          Fortalecimiento y posicionamiento de la marca
+          <span>en el mercado de productos derivados de la miel</span>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     01 · INTRODUCCIÓN
+====================================================================== -->
+<section class="section section--paper" id="contexto" tabindex="-1" aria-labelledby="contexto-title">
+  <div class="container">
+
+    <div class="intro__grid">
+
+      <!-- Columna de texto -->
+      <div class="intro__text" data-reveal>
+        <p class="label label--mark">01 · Introducción</p>
+        <h2 class="title" id="contexto-title">La imagen también <em>cuenta una historia.</em></h2>
+
+        <!-- Idea central -->
+        <blockquote class="intro__quote">
+          <p>La imagen pública es <strong>la percepción que las personas construyen</strong> de una empresa.</p>
+          <footer>Por eso es importante para su reconocimiento y su posicionamiento.</footer>
+        </blockquote>
+
+        <!-- De dónde nace esa percepción -->
+        <div class="intro__sources">
+          <h3 class="label">Se construye a partir de</h3>
+          <ul class="source-list">
+            <li><svg class="icon" aria-hidden="true"><use href="#i-jar"/></svg>Productos</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg>Identidad visual</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>Comunicación</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#i-smile"/></svg>Experiencia de contacto</li>
+          </ul>
+        </div>
+
+        <!-- Con qué se relaciona en el caso de SAMILU -->
+        <div class="intro__values">
+          <h3 class="label">En SAMILU se relaciona con</h3>
+          <ul class="value-cells">
+            <li><span class="hex value-cells__hex">Calidad</span></li>
+            <li><span class="hex value-cells__hex">Naturaleza</span></li>
+            <li><span class="hex value-cells__hex">Origen<small>Selva Central</small></span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Columna visual: fotografía + ficha de la marca -->
+      <div class="intro__visual" data-reveal>
+        <figure class="figure">
+          <button class="zoom figure__frame figure__frame--4x3" type="button" data-zoom data-caption="Empresa y entorno">
+            <img src="img/empresa-entorno.jpg"
+                 alt="Empresa o proceso de SAMILU" width="960" height="643" loading="lazy">
+            <span class="zoom__badge" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+          </button>
+          <figcaption class="label label--mark label--leaf figure__caption">Empresa y entorno</figcaption>
+        </figure>
+
+        <dl class="brand-sheet">
+          <div>
+            <dt>Marca</dt>
+            <dd><strong>SAMILU</strong></dd>
+          </div>
+          <div>
+            <dt>Empresa</dt>
+            <dd>Sabor Amazónico, Miel y Luz S.A.C.</dd>
+          </div>
+          <div>
+            <dt>Elabora y vende</dt>
+            <dd>
+              <ul class="brand-sheet__products">
+                <li>Crema untable</li>
+                <li>Barras energéticas</li>
+                <li>Miel saborizada</li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+    </div>
+
+    <!-- Alcance del informe -->
+    <div class="scope" data-reveal>
+      <div class="scope__block">
+        <h3 class="label">Este informe analiza</h3>
+        <ul class="scope__links">
+          <li><a href="#identidad">Identidad corporativa</a></li>
+          <li><a href="#encuesta">Percepción del público</a></li>
+          <li><a href="#comunicacion">Canales digitales</a></li>
+          <li><a href="#foda">Oportunidades de mejora</a></li>
+        </ul>
+      </div>
+      <div class="scope__block scope__block--sources">
+        <h3 class="label">Tomando como base</h3>
+        <p>Documentos institucionales y sitio web de SAMILU</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     02 · OBJETIVOS DEL ESTUDIO
+     Un objetivo general + cinco específicos presentados como una ruta
+====================================================================== -->
+<section class="section section--cream" id="objetivos" tabindex="-1" aria-labelledby="objetivos-title">
+  <div class="container">
+
+    <p class="label label--mark">02 · Objetivos del estudio</p>
+    <h2 class="title" id="objetivos-title">¿Qué buscamos <em>conocer?</em></h2>
+
+    <!-- Objetivo general -->
+    <div class="goal-main" data-reveal>
+      <div class="goal-main__pattern" aria-hidden="true"></div>
+      <div class="goal-main__inner">
+        <span class="hex goal-main__hex">01</span>
+        <div>
+          <p class="label">Objetivo general</p>
+          <p class="goal-main__text">
+            Analizar integralmente la imagen pública y reputación corporativa de SAMILU, evaluando su
+            identidad visual, comunicación institucional, percepción de sus productos y presencia digital
+            para formular un plan estratégico de fortalecimiento de marca.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Objetivos específicos: la ruta del estudio -->
+    <div class="route" data-reveal>
+      <h3 class="label route__title">Objetivos específicos · la ruta del estudio</h3>
+
+      <ol class="route__steps">
+        <li class="route__step">
+          <span class="hex route__hex">02</span>
+          <h4>Identidad</h4>
+          <p>Identificar y evaluar los elementos constitutivos de la identidad visual y cultura corporativa de SAMILU.</p>
+          <a class="text-link" href="#identidad">Sección 05 <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </li>
+        <li class="route__step">
+          <span class="hex route__hex">03</span>
+          <h4>Comunicación</h4>
+          <p>Analizar la coherencia de los canales de comunicación institucional y su presencia en Facebook, Instagram y TikTok.</p>
+          <a class="text-link" href="#comunicacion">Sección 5.4 <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </li>
+        <li class="route__step">
+          <span class="hex route__hex">04</span>
+          <h4>Percepción</h4>
+          <p>Examinar la percepción de los consumidores sobre la calidad, presentación, variedad y valor de los productos derivados de la miel.</p>
+          <a class="text-link" href="#encuesta">Sección 5.2 <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </li>
+        <li class="route__step">
+          <span class="hex route__hex">05</span>
+          <h4>Síntesis</h4>
+          <p>Sintetizar las fortalezas, debilidades, oportunidades y amenazas de SAMILU en una matriz estratégica FODA.</p>
+          <a class="text-link" href="#foda">Sección 06 <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </li>
+        <li class="route__step">
+          <span class="hex route__hex">06</span>
+          <h4>Propuesta</h4>
+          <p>Proponer un plan integral de mejoras con acciones e indicadores clave de desempeño (KPIs).</p>
+          <a class="text-link" href="#plan">Sección 07 <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     03 · MARCO TEÓRICO
+     Pestañas: cada concepto con su autor y su definición operativa
+====================================================================== -->
+<section class="section section--forest on-dark" id="marco" tabindex="-1" aria-labelledby="marco-title">
+  <div class="container">
+
+    <div class="split-intro" data-reveal>
+      <div>
+        <p class="label label--mark">03 · Marco teórico</p>
+        <h2 class="title" id="marco-title">Los conceptos que <em>sustentan el estudio.</em></h2>
+      </div>
+      <p class="split-intro__text muted">
+        Cuatro conceptos, aplicados a una marca agroindustrial de productos derivados de la miel.
+        Selecciona cada uno para consultar su autor de referencia y su definición operativa en el estudio.
+      </p>
+    </div>
+
+    <div class="theory" data-tabs data-reveal>
+
+      <div class="theory__tabs" role="tablist" aria-label="Conceptos del marco teórico">
+        <button class="pill-tab" role="tab" type="button" id="teoria-tab-1" aria-controls="teoria-panel-1" aria-selected="true">
+          <span class="pill-tab__num">01</span><span class="pill-tab__label">Imagen pública</span>
+        </button>
+        <button class="pill-tab" role="tab" type="button" id="teoria-tab-2" aria-controls="teoria-panel-2" aria-selected="false" tabindex="-1">
+          <span class="pill-tab__num">02</span><span class="pill-tab__label">Identidad corporativa</span>
+        </button>
+        <button class="pill-tab" role="tab" type="button" id="teoria-tab-3" aria-controls="teoria-panel-3" aria-selected="false" tabindex="-1">
+          <span class="pill-tab__num">03</span><span class="pill-tab__label">Reputación empresarial</span>
+        </button>
+        <button class="pill-tab" role="tab" type="button" id="teoria-tab-4" aria-controls="teoria-panel-4" aria-selected="false" tabindex="-1">
+          <span class="pill-tab__num">04</span><span class="pill-tab__label">Comunicación digital</span>
+        </button>
+      </div>
+
+      <!-- Concepto 01 -->
+      <div class="concept on-light" role="tabpanel" id="teoria-panel-1" aria-labelledby="teoria-tab-1" tabindex="0">
+        <div class="concept__inner swap">
+          <span class="hex concept__hex">01</span>
+          <div>
+            <p class="label">Concepto 01 · Lo que el público percibe</p>
+            <h3 class="concept__name">Imagen Pública</h3>
+            <p class="concept__author">Costa (2004)</p>
+            <p class="concept__text">Percepción que el público construye de SAMILU a partir de sus productos, identidad visual, comunicación y puntos de contacto.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Concepto 02 · ⚠ BORRADOR: autor deducido de las referencias; definición redactada -->
+      <div class="concept on-light" role="tabpanel" id="teoria-panel-2" aria-labelledby="teoria-tab-2" tabindex="0" hidden>
+        <div class="concept__inner swap">
+          <span class="hex concept__hex">02</span>
+          <div>
+            <p class="label">Concepto 02 · Lo que distingue a la marca</p>
+            <h3 class="concept__name">Identidad Corporativa</h3>
+            <p class="concept__author">Capriotti (2009)</p>
+            <p class="concept__text">Conjunto de rasgos que distinguen a SAMILU: su imagotipo, colores, tipografía y la forma en que se presenta en cada soporte.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Concepto 03 · ⚠ BORRADOR -->
+      <div class="concept on-light" role="tabpanel" id="teoria-panel-3" aria-labelledby="teoria-tab-3" tabindex="0" hidden>
+        <div class="concept__inner swap">
+          <span class="hex concept__hex">03</span>
+          <div>
+            <p class="label">Concepto 03 · Lo que se consolida con el tiempo</p>
+            <h3 class="concept__name">Reputación Empresarial</h3>
+            <p class="concept__author">Kotler y Keller (2016)</p>
+            <p class="concept__text">Valoración que el público consolida sobre SAMILU con el tiempo, reflejada en las opiniones y puntuaciones que deja en las plataformas de reseñas.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Concepto 04 · ⚠ BORRADOR -->
+      <div class="concept on-light" role="tabpanel" id="teoria-panel-4" aria-labelledby="teoria-tab-4" tabindex="0" hidden>
+        <div class="concept__inner swap">
+          <span class="hex concept__hex">04</span>
+          <div>
+            <p class="label">Concepto 04 · Dónde conversa con su público</p>
+            <h3 class="concept__name">Comunicación Digital</h3>
+            <p class="concept__author">Kaplan y Haenlein (2010)</p>
+            <p class="concept__text">Interacción de SAMILU con su público en Facebook, Instagram y TikTok, donde difunde sus contenidos y responde consultas.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     04 · METODOLOGÍA
+     Enfoque mixto: seis técnicas que se filtran por tipo.
+     Las técnicas con detalle se despliegan (<details>).
+====================================================================== -->
+<section class="section section--paper" id="metodologia" tabindex="-1" aria-labelledby="metodologia-title">
+  <div class="container">
+
+    <div class="method" data-method>
+
+      <!-- Columna fija: titular, enfoque y criterio de rigor -->
+      <div class="method__aside" data-reveal>
+        <p class="label label--mark">04 · Metodología de la investigación</p>
+        <h2 class="title" id="metodologia-title">¿Cómo se realizó <em>el estudio?</em></h2>
+        <p class="method__lead">
+          Con un <strong>enfoque mixto</strong>: seis técnicas, tres cualitativas y tres cuantitativas.
+        </p>
+
+        <!-- Filtro: también funciona como diagrama del enfoque mixto -->
+        <div class="mix" role="group" aria-label="Filtrar técnicas por tipo">
+          <button class="mix__btn mix__btn--all" type="button" data-filter="all" aria-pressed="true">
+            <strong>6</strong> Todas
+          </button>
+          <button class="mix__btn mix__btn--cual" type="button" data-filter="cual" aria-pressed="false">
+            <strong>3</strong> Cualitativas
+          </button>
+          <button class="mix__btn mix__btn--cuant" type="button" data-filter="cuant" aria-pressed="false">
+            <strong>3</strong> Cuantitativas
+          </button>
+        </div>
+
+        <div class="note">
+          <svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>
+          <p>
+            <strong>Criterio de rigor.</strong>
+            Los resultados se presentan según los datos disponibles. No se atribuyen al estudio
+            actividades que no fueron realizadas.
+          </p>
+        </div>
+      </div>
+
+      <!-- Técnicas de recolección de información -->
+      <div class="method__list" data-reveal>
+        <h3 class="label method__list-title">Técnicas de recolección de información</h3>
+
+        <ul class="techniques">
+
+          <!-- 1 · sin detalle desplegable -->
+          <li class="technique" data-type="cual">
+            <div class="technique__row">
+              <span class="technique__icon"><svg class="icon" aria-hidden="true"><use href="#i-doc"/></svg></span>
+              <span class="technique__main">
+                <strong>Revisión documental</strong>
+                <span>Identidad institucional y sitio web de SAMILU.</span>
+              </span>
+              <span class="tag tag--cual">Cualitativa</span>
+            </div>
+          </li>
+
+          <!-- 2 -->
+          <li class="technique" data-type="cual">
+            <details>
+              <summary class="technique__row">
+                <span class="technique__icon"><svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg></span>
+                <span class="technique__main">
+                  <strong>Observación directa</strong>
+                  <span>Elementos visuales y aplicaciones de la marca.</span>
+                </span>
+                <span class="tag tag--cual">Cualitativa</span>
+                <svg class="icon technique__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+              </summary>
+              <dl class="technique__detail">
+                <div><dt>Muestra / alcance</dt><dd>Observación de imagotipo, colores, tipografía, empaques, aplicaciones y sitio web.</dd></div>
+                <div><dt>Objetivo de medición</dt><dd>Verificar consistencia visual y claridad de la presentación de la marca.</dd></div>
+              </dl>
+            </details>
+          </li>
+
+          <!-- 3 -->
+          <li class="technique" data-type="cuant">
+            <details>
+              <summary class="technique__row">
+                <span class="technique__icon"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg></span>
+                <span class="technique__main">
+                  <strong>Encuesta a consumidores</strong>
+                  <span>Encuesta real aplicada a 10 personas.</span>
+                </span>
+                <span class="technique__figure"><b>10</b> personas</span>
+                <span class="tag tag--cuant">Cuantitativa</span>
+                <svg class="icon technique__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+              </summary>
+              <dl class="technique__detail">
+                <div><dt>Muestra / alcance</dt><dd>10 personas de 18 a 50 años (escenario simulado).</dd></div>
+                <div><dt>Objetivo de medición</dt><dd>Explorar la valoración de calidad, sabor, presentación y variedad de los productos.</dd></div>
+              </dl>
+            </details>
+          </li>
+
+          <!-- 4 -->
+          <li class="technique" data-type="cual">
+            <details>
+              <summary class="technique__row">
+                <span class="technique__icon"><svg class="icon" aria-hidden="true"><use href="#i-screen"/></svg></span>
+                <span class="technique__main">
+                  <strong>Revisión de canales digitales</strong>
+                  <span>Seguimiento durante un periodo de tres meses.</span>
+                </span>
+                <span class="technique__figure"><b>3</b> meses</span>
+                <span class="tag tag--cual">Cualitativa</span>
+                <svg class="icon technique__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+              </summary>
+              <dl class="technique__detail">
+                <div><dt>Muestra / alcance</dt><dd>Sitio web y canales declarados: Facebook, Instagram y TikTok.</dd></div>
+                <div><dt>Objetivo de medición</dt><dd>Identificar el papel de cada canal y revisar coherencia del contenido institucional.</dd></div>
+              </dl>
+            </details>
+          </li>
+
+          <!-- 5 -->
+          <li class="technique" data-type="cuant">
+            <details>
+              <summary class="technique__row">
+                <span class="technique__icon"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span>
+                <span class="technique__main">
+                  <strong>Revisión de reputación digital</strong>
+                  <span>Puntuaciones y cantidades de reseñas verificadas.</span>
+                </span>
+                <span class="technique__figure"><b>3</b> plataformas</span>
+                <span class="tag tag--cuant">Cuantitativa</span>
+                <svg class="icon technique__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+              </summary>
+              <dl class="technique__detail">
+                <div><dt>Muestra / alcance</dt><dd>Google Maps, TripAdvisor y Facebook Reviews; puntuaciones y cantidades verificadas.</dd></div>
+                <div><dt>Objetivo de medición</dt><dd>Reconocer opiniones y temas recurrentes sin atribuir calificaciones no comprobadas.</dd></div>
+              </dl>
+            </details>
+          </li>
+
+          <!-- 6 · sin detalle desplegable -->
+          <li class="technique" data-type="cuant">
+            <div class="technique__row">
+              <span class="technique__icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+              <span class="technique__main">
+                <strong>Medición de tiempos de respuesta</strong>
+                <span>Tiempos promedio en TikTok, Facebook e Instagram.</span>
+              </span>
+              <span class="technique__figure"><b>3</b> canales</span>
+              <span class="tag tag--cuant">Cuantitativa</span>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     05 · IDENTIDAD VISUAL Y CORPORATIVA
+     Anatomía del imagotipo · paleta · hallazgo · recomendación · galería
+====================================================================== -->
+<section class="section section--cream" id="identidad" tabindex="-1" aria-labelledby="identidad-title">
+  <div class="container">
+
+    <div class="split-intro" data-reveal>
+      <div>
+        <p class="label label--mark">05 · Análisis de imagen pública de SAMILU</p>
+        <h2 class="title" id="identidad-title">Identidad visual <em>y corporativa.</em></h2>
+      </div>
+      <p class="split-intro__text">
+        Una identidad vinculada con <strong>la miel y la naturaleza</strong>,
+        que todavía necesita criterios unificados entre sus distintos soportes.
+      </p>
+    </div>
+
+    <div class="identity__grid">
+
+      <!-- Anatomía del imagotipo: cada número señala un elemento -->
+      <div class="anatomy" data-anatomy data-reveal>
+        <h3 class="label">El imagotipo integra cuatro elementos</h3>
+
+        <div class="anatomy__stage">
+          <img src="img/logo-samilu.png" alt="Imagotipo de SAMILU" width="480" height="226" loading="lazy">
+          <!-- Posición de cada marca: left / top en porcentaje sobre el logotipo -->
+          <span class="anatomy__dot" data-part="1" style="left: 37%; top: 7%" aria-hidden="true">1</span>
+          <span class="anatomy__dot" data-part="2" style="left: 13%; top: 6%" aria-hidden="true">2</span>
+          <span class="anatomy__dot" data-part="3" style="left: 65.5%; top: 93%" aria-hidden="true">3</span>
+          <span class="anatomy__dot" data-part="4" style="left: 93%; top: 13%" aria-hidden="true">4</span>
+        </div>
+
+        <ul class="anatomy__list">
+          <li><button type="button" data-part="1"><b>1</b> Abeja</button></li>
+          <li><button type="button" data-part="2"><b>2</b> Cucharón con miel</button></li>
+          <li><button type="button" data-part="3"><b>3</b> Gotas</button></li>
+          <li><button type="button" data-part="4"><b>4</b> Hojas</button></li>
+        </ul>
+      </div>
+
+      <!-- Paleta -->
+      <div class="palette" data-reveal>
+        <h3 class="label">Una paleta cálida y natural</h3>
+        <ul class="palette__list">
+          <li style="--swatch: #f9a600"><span class="hex palette__hex"></span><b>Miel</b></li>
+          <li style="--swatch: #4a1b01"><span class="hex palette__hex"></span><b>Marrón</b></li>
+          <li style="--swatch: #6cad28"><span class="hex palette__hex"></span><b>Verdes</b></li>
+          <li style="--swatch: #fbf5e8"><span class="hex palette__hex palette__hex--light"></span><b>Crema</b></li>
+        </ul>
+      </div>
+
+      <!-- Hallazgo -->
+      <div class="finding" data-reveal>
+        <p class="label finding__label"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-alert"/></svg>Hallazgo en los materiales revisados</p>
+        <h3 class="finding__title">Falta unificar el uso tipográfico y fijar criterios consistentes.</h3>
+        <p class="finding__text">Los criterios deben ser los mismos en los distintos soportes para:</p>
+        <ul class="finding__list">
+          <li>Logotipo</li>
+          <li>Colores</li>
+          <li>Elementos gráficos</li>
+        </ul>
+      </div>
+
+      <!-- Recomendación tipográfica -->
+      <div class="type-rule" data-reveal>
+        <p class="label">Recomendación para la aplicación digital</p>
+        <div class="type-rule__row">
+          <span class="type-rule__sample" aria-hidden="true">Aa</span>
+          <p><strong>Fredoka</strong> como tipografía de uso general, de acuerdo con la línea visual del sitio.</p>
+        </div>
+        <div class="type-rule__row">
+          <img class="type-rule__logo" src="img/logo-samilu.png" alt="" width="480" height="226" loading="lazy">
+          <p>La <strong>tipografía propia del imagotipo</strong> se reserva para el logotipo.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Galería: identidad aplicada + productos -->
+    <div class="gallery">
+
+      <figure class="figure gallery__main" data-reveal>
+        <button class="zoom figure__frame figure__frame--10x7" type="button" data-zoom data-caption="Identidad visual">
+          <img src="img/identidad-visual.jpg"
+               alt="Identidad visual de SAMILU" width="1000" height="701" loading="lazy">
+          <span class="zoom__badge" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+        </button>
+        <figcaption class="label label--mark label--leaf figure__caption">Identidad visual</figcaption>
+      </figure>
+
+      <ul class="gallery__products">
+        <li data-reveal>
+          <figure class="product">
+            <button class="zoom product__image" type="button" data-zoom data-caption="Crema untable">
+              <img src="img/crema-untable.jpg"
+                   alt="Crema untable" width="760" height="507" loading="lazy">
+              <span class="zoom__badge" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+            </button>
+            <figcaption class="product__name">Crema untable</figcaption>
+          </figure>
+        </li>
+        <li data-reveal>
+          <figure class="product">
+            <button class="zoom product__image" type="button" data-zoom data-caption="Barras energéticas">
+              <img src="img/barras-energeticas.jpg"
+                   alt="Barras energéticas" width="760" height="507" loading="lazy">
+              <span class="zoom__badge" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+            </button>
+            <figcaption class="product__name">Barras energéticas</figcaption>
+          </figure>
+        </li>
+        <li data-reveal>
+          <figure class="product">
+            <button class="zoom product__image" type="button" data-zoom data-caption="Miel saborizada">
+              <img src="img/miel-saborizada.jpg"
+                   alt="Miel saborizada" width="760" height="507" loading="lazy">
+              <span class="zoom__badge" aria-hidden="true"><svg class="icon"><use href="#i-expand"/></svg></span>
+            </button>
+            <figcaption class="product__name">Miel saborizada</figcaption>
+          </figure>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- =====================================================================
+     5.2 · PERCEPCIÓN Y SATISFACCIÓN DEL CLIENTE (ENCUESTA)
+     Izquierda: comparación de los cinco aspectos (cada fila es una pestaña).
+     Derecha: detalle de la pregunta elegida.
+     Los gráficos se dibujan solos a partir de los números de cada tabla.
+====================================================================== -->
+<section class="section section--honey" id="encuesta" tabindex="-1" aria-labelledby="encuesta-title">
+  <div class="container">
+
+    <div class="split-intro" data-reveal>
+      <div>
+        <p class="label label--mark">5.2 · Percepción y satisfacción del cliente</p>
+        <h2 class="title" id="encuesta-title">La opinión de los <em>consumidores.</em></h2>
+      </div>
+      <p class="split-intro__text">
+        <strong>Diez personas</strong> valoraron cinco aspectos de la marca: productos, sabores, envases,
+        atención y publicaciones en redes sociales. Elige un aspecto para ver su pregunta y sus respuestas.
+      </p>
+    </div>
+
+    <div class="survey" data-tabs data-survey data-reveal>
+
+      <!-- Comparación -->
+      <div class="survey__overview">
+        <h3 class="label">Los cinco aspectos, de un vistazo</h3>
+
+        <div class="survey__tabs" role="tablist" aria-label="Aspectos valorados en la encuesta" aria-orientation="vertical">
+
+          <button class="aspect" role="tab" type="button" id="encuesta-tab-1" aria-controls="encuesta-panel-1" aria-selected="true">
+            <span class="aspect__name">Productos <span class="badge badge--leaf">Mejor valorado</span></span>
+            <span class="aspect__score"><b data-positive>100%</b> positiva</span>
+            <span class="aspect__bar" data-bar aria-hidden="true"></span>
+          </button>
+
+          <button class="aspect" role="tab" type="button" id="encuesta-tab-2" aria-controls="encuesta-panel-2" aria-selected="false" tabindex="-1">
+            <span class="aspect__name">Sabores</span>
+            <span class="aspect__score"><b data-positive>80%</b> positiva</span>
+            <span class="aspect__bar" data-bar aria-hidden="true"></span>
+          </button>
+
+          <button class="aspect" role="tab" type="button" id="encuesta-tab-3" aria-controls="encuesta-panel-3" aria-selected="false" tabindex="-1">
+            <span class="aspect__name">Envases y empaques <span class="badge badge--honey">Más respuestas regulares</span></span>
+            <span class="aspect__score"><b data-positive>60%</b> positiva</span>
+            <span class="aspect__bar" data-bar aria-hidden="true"></span>
+          </button>
+
+          <button class="aspect" role="tab" type="button" id="encuesta-tab-4" aria-controls="encuesta-panel-4" aria-selected="false" tabindex="-1">
+            <span class="aspect__name">Atención</span>
+            <span class="aspect__score"><b data-positive>70%</b> positiva</span>
+            <span class="aspect__bar" data-bar aria-hidden="true"></span>
+          </button>
+
+          <button class="aspect" role="tab" type="button" id="encuesta-tab-5" aria-controls="encuesta-panel-5" aria-selected="false" tabindex="-1">
+            <span class="aspect__name">Redes sociales</span>
+            <span class="aspect__score"><b data-positive>80%</b> positiva</span>
+            <span class="aspect__bar" data-bar aria-hidden="true"></span>
+          </button>
+
+        </div>
+
+        <!-- Leyenda de colores -->
+        <ul class="legend" aria-label="Leyenda">
+          <li class="answer--mb">Muy buena</li>
+          <li class="answer--b">Buena</li>
+          <li class="answer--r">Regular</li>
+          <li class="answer--m">Mala</li>
+          <li class="answer--nv">No las ha visto</li>
+        </ul>
+        <p class="survey__footnote">Positiva = muy buena + buena. Cada barra representa a las 10 personas encuestadas.</p>
+      </div>
+
+      <!-- Detalle -->
+      <div class="survey__detail">
+
+        <!-- Pregunta 1 -->
+        <div class="question" role="tabpanel" id="encuesta-panel-1" aria-labelledby="encuesta-tab-1" tabindex="0">
+          <div class="swap">
+            <p class="label">Pregunta 1 de 5 · Productos</p>
+            <h3 class="question__text">¿Qué opina de los productos que ofrece Apiario Caballero?</h3>
+            <div class="honeycomb" data-honeycomb></div>
+            <table class="freq">
+              <caption>Tabla de frecuencias de la pregunta 1</caption>
+              <thead><tr><th scope="col">Respuesta</th><th scope="col">Frecuencia</th><th scope="col">%</th></tr></thead>
+              <tbody>
+                <tr data-answer="mb"><th scope="row">Muy buena</th><td>2</td><td>20%</td></tr>
+                <tr data-answer="b"><th scope="row">Buena</th><td>8</td><td>80%</td></tr>
+                <tr data-answer="r"><th scope="row">Regular</th><td>0</td><td>0%</td></tr>
+                <tr data-answer="m"><th scope="row">Mala</th><td>0</td><td>0%</td></tr>
+              </tbody>
+              <tfoot><tr><th scope="row">Total</th><td>10</td><td>100%</td></tr></tfoot>
+            </table>
+            <p class="question__insight"><strong>Valoración totalmente positiva.</strong> No se registraron respuestas regulares ni malas.</p>
+          </div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="question" role="tabpanel" id="encuesta-panel-2" aria-labelledby="encuesta-tab-2" tabindex="0" hidden>
+          <div class="swap">
+            <p class="label">Pregunta 2 de 5 · Sabores</p>
+            <h3 class="question__text">Al probarlos, ¿cómo le parecen sus sabores?</h3>
+            <div class="honeycomb" data-honeycomb></div>
+            <table class="freq">
+              <caption>Tabla de frecuencias de la pregunta 2</caption>
+              <thead><tr><th scope="col">Respuesta</th><th scope="col">Frecuencia</th><th scope="col">%</th></tr></thead>
+              <tbody>
+                <tr data-answer="mb"><th scope="row">Muy buena</th><td>2</td><td>20%</td></tr>
+                <tr data-answer="b"><th scope="row">Buena</th><td>6</td><td>60%</td></tr>
+                <tr data-answer="r"><th scope="row">Regular</th><td>2</td><td>20%</td></tr>
+                <tr data-answer="m"><th scope="row">Mala</th><td>0</td><td>0%</td></tr>
+              </tbody>
+              <tfoot><tr><th scope="row">Total</th><td>10</td><td>100%</td></tr></tfoot>
+            </table>
+            <p class="question__insight"><strong>8 de cada 10 valoran bien los sabores.</strong> Dos personas los consideran regulares; no se registraron respuestas malas.</p>
+          </div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="question" role="tabpanel" id="encuesta-panel-3" aria-labelledby="encuesta-tab-3" tabindex="0" hidden>
+          <div class="swap">
+            <p class="label">Pregunta 3 de 5 · Envases y empaques</p>
+            <h3 class="question__text">Pensando en cómo se ven, ¿qué le parecen sus envases y empaques?</h3>
+            <div class="honeycomb" data-honeycomb></div>
+            <table class="freq">
+              <caption>Tabla de frecuencias de la pregunta 3</caption>
+              <thead><tr><th scope="col">Respuesta</th><th scope="col">Frecuencia</th><th scope="col">%</th></tr></thead>
+              <tbody>
+                <tr data-answer="mb"><th scope="row">Muy buena</th><td>4</td><td>40%</td></tr>
+                <tr data-answer="b"><th scope="row">Buena</th><td>2</td><td>20%</td></tr>
+                <tr data-answer="r"><th scope="row">Regular</th><td>4</td><td>40%</td></tr>
+                <tr data-answer="m"><th scope="row">Mala</th><td>0</td><td>0%</td></tr>
+              </tbody>
+              <tfoot><tr><th scope="row">Total</th><td>10</td><td>100%</td></tr></tfoot>
+            </table>
+            <p class="question__insight"><strong>Opiniones divididas.</strong> Cuatro respuestas muy buenas y cuatro regulares; no se registraron respuestas malas.</p>
+          </div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="question" role="tabpanel" id="encuesta-panel-4" aria-labelledby="encuesta-tab-4" tabindex="0" hidden>
+          <div class="swap">
+            <p class="label">Pregunta 4 de 5 · Atención</p>
+            <h3 class="question__text">¿Cómo le parecen los servicios de atención que recibe? Piense en el trato, la amabilidad y la rapidez.</h3>
+            <div class="honeycomb" data-honeycomb></div>
+            <table class="freq">
+              <caption>Tabla de frecuencias de la pregunta 4</caption>
+              <thead><tr><th scope="col">Respuesta</th><th scope="col">Frecuencia</th><th scope="col">%</th></tr></thead>
+              <tbody>
+                <tr data-answer="mb"><th scope="row">Muy buena</th><td>2</td><td>20%</td></tr>
+                <tr data-answer="b"><th scope="row">Buena</th><td>5</td><td>50%</td></tr>
+                <tr data-answer="r"><th scope="row">Regular</th><td>3</td><td>30%</td></tr>
+                <tr data-answer="m"><th scope="row">Mala</th><td>0</td><td>0%</td></tr>
+              </tbody>
+              <tfoot><tr><th scope="row">Total</th><td>10</td><td>100%</td></tr></tfoot>
+            </table>
+            <p class="question__insight"><strong>7 de cada 10 valoran bien la atención.</strong> Tres personas la consideran regular; no se registraron respuestas malas.</p>
+          </div>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="question" role="tabpanel" id="encuesta-panel-5" aria-labelledby="encuesta-tab-5" tabindex="0" hidden>
+          <div class="swap">
+            <p class="label">Pregunta 5 de 5 · Redes sociales</p>
+            <h3 class="question__text">¿Qué le parecen las publicaciones de las redes sociales (Facebook, Instagram y TikTok)?</h3>
+            <div class="honeycomb" data-honeycomb></div>
+            <table class="freq">
+              <caption>Tabla de frecuencias de la pregunta 5</caption>
+              <thead><tr><th scope="col">Respuesta</th><th scope="col">Frecuencia</th><th scope="col">%</th></tr></thead>
+              <tbody>
+                <tr data-answer="mb"><th scope="row">Muy buena</th><td>3</td><td>30%</td></tr>
+                <tr data-answer="b"><th scope="row">Buena</th><td>5</td><td>50%</td></tr>
+                <tr data-answer="r"><th scope="row">Regular</th><td>1</td><td>10%</td></tr>
+                <tr data-answer="m"><th scope="row">Mala</th><td>0</td><td>0%</td></tr>
+                <tr data-answer="nv"><th scope="row">No las ha visto</th><td>1</td><td>10%</td></tr>
+              </tbody>
+              <tfoot><tr><th scope="row">Total</th><td>10</td><td>100%</td></tr></tfoot>
+            </table>
+            <p class="question__insight"><strong>8 de cada 10 valoran bien las publicaciones.</strong> Una persona las considera regulares y otra no las ha visto; ninguna respuesta mala.</p>
+          </div>
+        </div>
+
+        <!-- Anterior / siguiente -->
+        <div class="survey__nav">
+          <button class="btn btn--outline" type="button" data-prev aria-disabled="true">
+            <svg class="icon icon--sm icon--left" aria-hidden="true"><use href="#i-arrow"/></svg>
+            Anterior
+          </button>
+          <button class="btn btn--solid" type="button" data-next aria-disabled="false">
+            <span data-next-label>Siguiente<span class="only-wide"> pregunta</span></span>
+            <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+        </div>
+
+      </div>
+
+<!-- =====================================================
+     NUEVO PANEL 03 — IMAGEN ORIGINAL DE EXCEL
+     NO REEMPLAZA LOS DOS PANELES EXISTENTES.
+===================================================== -->
+
+<aside class="survey__original" aria-label="Imagen original de Excel">
+
+  <div class="survey__original-heading">
+
+    <p class="label">03 · GRÁFICO ORIGINAL</p>
+
+    <h3>Resultados en Excel</h3>
+
+    <p>Representación gráfica original de cada pregunta.</p>
+
+    <span class="survey__original-question" data-original-question>
+      Pregunta 1 de 5
+    </span>
+
+  </div>
+
+  <div class="survey__original-stage is-empty" data-original-stage>
+
+    <img
+      data-original-image
+      alt="Gráfico original de Excel"
+      loading="eager"
+      decoding="async"
+
+      data-image-1="IMG/encuesta-p1-excel.png"
+      data-image-2="IMG/encuesta-p2-excel.png"
+      data-image-3="IMG/encuesta-p3-excel.png"
+      data-image-4="IMG/encuesta-p4-excel.png"
+      data-image-5="IMG/encuesta-p5-excel.png"
+    >
+
+    <div class="survey__original-empty" data-original-empty>
+
+      <span>＋</span>
+
+      <strong>IMAGEN ORIGINAL DE EXCEL</strong>
+
+      <small>
+        Aquí aparecerá el gráfico correspondiente a la pregunta seleccionada.
+      </small>
+
+    </div>
+
+  </div>
+
+  <p class="survey__original-footnote">
+    Fuente: elaboración propia · Gráfico estadístico
+  </p>
+
+</aside>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     5.3 · REPUTACIÓN DIGITAL POR PLATAFORMA
+     Comparación en filas, ordenable por puntuación o por reseñas.
+     data-score y data-reviews deben coincidir con los números visibles.
+====================================================================== -->
+<section class="section section--paper" id="reputacion" tabindex="-1" aria-labelledby="reputacion-title">
+  <div class="container">
+
+    <div class="split-intro" data-reveal>
+      <div>
+        <p class="label label--mark">5.3 · Reputación digital por plataforma</p>
+        <h2 class="title" id="reputacion-title">¿Cómo se valora la marca <em>en digital?</em></h2>
+      </div>
+
+      <!-- Indicadores -->
+      <dl class="indicators">
+        <div><dt>plataformas de opinión</dt><dd>3</dd></div>
+        <div><dt>opiniones en total</dt><dd>233</dd></div>
+        <div><dt>sobre 5.0</dt><dd>4.4–4.7</dd></div>
+      </dl>
+    </div>
+
+    <div class="rep" data-rep data-reveal>
+
+      <div class="rep__head">
+        <div>
+          <p class="label">Gráfico estadístico</p>
+          <h3 class="rep__title">Reputación Digital por Plataforma de Opinión</h3>
+        </div>
+        <div class="segmented" role="group" aria-label="Ordenar plataformas">
+          <span class="label">Ordenar por</span>
+          <button type="button" data-sort="score" aria-pressed="true">Puntuación</button>
+          <button type="button" data-sort="reviews" aria-pressed="false">Reseñas</button>
+        </div>
+      </div>
+
+      <ol class="rep__list">
+
+        <li class="platform" data-score="4.7" data-reviews="68">
+          <div class="platform__name">
+            <h4>Facebook Reviews</h4>
+            <span class="badge badge--leaf">Mejor puntuada</span>
+          </div>
+          <div class="platform__score">
+            <p class="platform__term">Puntuación promedio</p>
+            <p class="platform__number"><b>4.7</b> / 5.0</p>
+            <span class="hexmeter" style="--score: 4.7" aria-hidden="true"></span>
+          </div>
+          <div class="platform__reviews">
+            <p class="platform__term">Total reseñas</p>
+            <p class="platform__count"><b>68</b> opiniones</p>
+            <span class="minibar" aria-hidden="true"></span>
+          </div>
+          <div class="platform__praise">
+            <p class="platform__term">Aspecto más elogiado</p>
+            <p>Comunicación cercana y atención amable al cliente.</p>
+          </div>
+        </li>
+
+        <li class="platform" data-score="4.6" data-reviews="120">
+          <div class="platform__name">
+            <h4>Google Maps</h4>
+            <span class="badge badge--honey">Más reseñas</span>
+          </div>
+          <div class="platform__score">
+            <p class="platform__term">Puntuación promedio</p>
+            <p class="platform__number"><b>4.6</b> / 5.0</p>
+            <span class="hexmeter" style="--score: 4.6" aria-hidden="true"></span>
+          </div>
+          <div class="platform__reviews">
+            <p class="platform__term">Total reseñas</p>
+            <p class="platform__count"><b>120</b> opiniones</p>
+            <span class="minibar" aria-hidden="true"></span>
+          </div>
+          <div class="platform__praise">
+            <p class="platform__term">Aspecto más elogiado</p>
+            <p>Calidad y sabor natural de los productos derivados de la miel.</p>
+          </div>
+        </li>
+
+        <li class="platform" data-score="4.4" data-reviews="45">
+          <div class="platform__name">
+            <h4>TripAdvisor</h4>
+          </div>
+          <div class="platform__score">
+            <p class="platform__term">Puntuación promedio</p>
+            <p class="platform__number"><b>4.4</b> / 5.0</p>
+            <span class="hexmeter" style="--score: 4.4" aria-hidden="true"></span>
+          </div>
+          <div class="platform__reviews">
+            <p class="platform__term">Total reseñas</p>
+            <p class="platform__count"><b>45</b> opiniones</p>
+            <span class="minibar" aria-hidden="true"></span>
+          </div>
+          <div class="platform__praise">
+            <p class="platform__term">Aspecto más elogiado</p>
+            <p>Presentación atractiva y variedad de productos naturales.</p>
+          </div>
+        </li>
+
+      </ol>
+
+      <!-- Texto original de la sección, plegado -->
+      <details class="disclosure">
+        <summary>
+          Nota sobre las fuentes
+          <svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron"/></svg>
+        </summary>
+        <p>
+          El sitio institucional identifica Facebook, Google Maps y TripAdvisor como canales de comunicación
+          de SAMILU. Sin embargo, los documentos y la web consultados no presentan puntuaciones promedio ni
+          cantidades verificadas de reseñas. Por ello, la comparación registra los canales definidos y deja
+          las métricas de reputación como información pendiente de recopilación.
+        </p>
+      </details>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     5.4 · TIEMPOS DE RESPUESTA
+     --goal es la meta en minutos; cada fila indica sus minutos en --min.
+====================================================================== -->
+<section class="section section--cream" id="comunicacion" tabindex="-1" aria-labelledby="comunicacion-title">
+  <div class="container">
+
+    <div class="split-intro" data-reveal>
+      <div>
+        <p class="label label--mark">5.4 · Brecha en canales de comunicación digital</p>
+        <h2 class="title" id="comunicacion-title">La rapidez también <em>comunica.</em></h2>
+      </div>
+      <p class="split-intro__text">
+        <strong>Los tres canales responden dentro de la meta.</strong>
+        Instagram registra el menor tiempo promedio, seguido de Facebook y TikTok.
+      </p>
+    </div>
+
+    <div class="response" style="--goal: 30">
+
+      <!-- Meta -->
+      <div class="goal-card on-dark" data-reveal>
+        <div class="goal-card__pattern" aria-hidden="true"></div>
+        <p class="label">Meta de atención</p>
+        <div class="goal-card__body">
+          <p class="goal-card__value">30<span>min</span></p>
+          <p class="goal-card__note muted">Meta propuesta de atención para los canales digitales.</p>
+          <p class="goal-card__result"><b>3 de 3</b> canales dentro de la meta</p>
+        </div>
+      </div>
+
+      <!-- Gráfico -->
+      <div class="chart" data-reveal>
+        <h3 class="chart__title">Resultados de tiempos de respuesta</h3>
+
+        <div class="chart__axis" aria-hidden="true">
+          <span></span>
+          <div class="chart__scale">
+            <span style="left: 0%">0</span>
+            <span class="is-mid" style="left: 33.333%">10</span>
+            <span class="is-mid" style="left: 66.666%">20</span>
+            <span class="is-goal" style="left: 100%">Meta · 30 min</span>
+          </div>
+          <span></span>
+        </div>
+
+        <ul class="chart__rows">
+          <li class="lane" style="--min: 25">
+            <p class="label lane__name">TikTok</p>
+            <p class="lane__value">25<span>min</span></p>
+            <div class="lane__bar">
+              <div class="lane__track"><div class="lane__fill"></div><span class="lane__goal"></span></div>
+              <p class="lane__meta">
+                <span class="status"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Óptimo / Dentro de la meta</span>
+                <span class="lane__margin">5 min de margen</span>
+              </p>
+            </div>
+          </li>
+          <li class="lane" style="--min: 20">
+            <p class="label lane__name">Facebook</p>
+            <p class="lane__value">20<span>min</span></p>
+            <div class="lane__bar">
+              <div class="lane__track"><div class="lane__fill"></div><span class="lane__goal"></span></div>
+              <p class="lane__meta">
+                <span class="status"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Óptimo / Dentro de la meta</span>
+                <span class="lane__margin">10 min de margen</span>
+              </p>
+            </div>
+          </li>
+          <li class="lane" style="--min: 15">
+            <p class="label lane__name">Instagram</p>
+            <p class="lane__value">15<span>min</span></p>
+            <div class="lane__bar">
+              <div class="lane__track"><div class="lane__fill"></div><span class="lane__goal"></span></div>
+              <p class="lane__meta">
+                <span class="status"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>En rango aceptable</span>
+                <span class="lane__margin">15 min de margen</span>
+                <span class="badge badge--leaf">El más rápido</span>
+              </p>
+            </div>
+          </li>
+        </ul>
+
+        <p class="chart__note">
+          Esta medición es una referencia para mantener el seguimiento y procurar una atención oportuna.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     06 · MATRIZ FODA
+     ⚠ BORRADOR: fortalezas y debilidades redactadas con los hallazgos del
+     informe; oportunidades y amenazas tomadas de «Auditoría de imagen».
+====================================================================== -->
+<section class="section section--paper" id="foda" tabindex="-1" aria-labelledby="foda-title">
+  <div class="container">
+
+    <div class="split-intro" data-reveal>
+      <div>
+        <p class="label label--mark">06 · Matriz FODA estratégica</p>
+        <h2 class="title" id="foda-title">Cuatro perspectivas, <em>una marca.</em></h2>
+      </div>
+      <p class="split-intro__text">
+        Los elementos de identidad y comunicación documentados, junto con los factores del entorno que
+        SAMILU debe considerar para fortalecer su imagen pública. Selecciona cada cuadrante para explorar sus factores.
+      </p>
+    </div>
+
+    <div class="foda" data-tabs data-reveal>
+
+      <!-- Matriz 2 × 2 con sus ejes -->
+      <div class="matrix">
+        <span class="label matrix__axis matrix__axis--col-1" aria-hidden="true">Interno</span>
+        <span class="label matrix__axis matrix__axis--col-2" aria-hidden="true">Externo</span>
+        <span class="label matrix__axis matrix__axis--row-1" aria-hidden="true">A favor</span>
+        <span class="label matrix__axis matrix__axis--row-2" aria-hidden="true">Por atender</span>
+
+        <div class="matrix__cells" role="tablist" aria-label="Cuadrantes de la matriz FODA">
+          <button class="quadrant quadrant--strength" role="tab" type="button" id="foda-tab-f" aria-controls="foda-panel-f" aria-selected="true">
+            <span class="quadrant__letter" aria-hidden="true">F</span>
+            <span class="quadrant__text"><b>Fortalezas</b><small>Factores internos positivos</small></span>
+          </button>
+          <button class="quadrant quadrant--opportunity" role="tab" type="button" id="foda-tab-o" aria-controls="foda-panel-o" aria-selected="false" tabindex="-1">
+            <span class="quadrant__letter" aria-hidden="true">O</span>
+            <span class="quadrant__text"><b>Oportunidades</b><small>Factores externos positivos</small></span>
+          </button>
+          <button class="quadrant quadrant--weakness" role="tab" type="button" id="foda-tab-d" aria-controls="foda-panel-d" aria-selected="false" tabindex="-1">
+            <span class="quadrant__letter" aria-hidden="true">D</span>
+            <span class="quadrant__text"><b>Debilidades</b><small>Factores internos por mejorar</small></span>
+          </button>
+          <button class="quadrant quadrant--threat" role="tab" type="button" id="foda-tab-a" aria-controls="foda-panel-a" aria-selected="false" tabindex="-1">
+            <span class="quadrant__letter" aria-hidden="true">A</span>
+            <span class="quadrant__text"><b>Amenazas</b><small>Factores externos de riesgo</small></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Factores de cada cuadrante -->
+      <div class="foda__panels">
+
+        <div class="factors factors--strength" role="tabpanel" id="foda-panel-f" aria-labelledby="foda-tab-f" tabindex="0">
+          <div class="swap">
+            <p class="label">Factores internos positivos</p>
+            <h3 class="factors__title">Fortalezas</h3>
+            <ul class="factors__list">
+              <li>Identidad visual relacionada con la miel y la naturaleza.</li>
+              <li>Tres líneas de productos que permiten variar los contenidos.</li>
+              <li>Vínculo con la Selva Central como atributo diferenciador.</li>
+              <li>Personalidad cálida, cercana e innovadora.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="factors factors--opportunity" role="tabpanel" id="foda-panel-o" aria-labelledby="foda-tab-o" tabindex="0" hidden>
+          <div class="swap">
+            <p class="label">Factores externos positivos</p>
+            <h3 class="factors__title">Oportunidades</h3>
+            <ul class="factors__list">
+              <li>Videos breves para mostrar productos y presentaciones.</li>
+              <li>Contenido educativo sobre la miel y sus derivados.</li>
+              <li>Catálogo digital para facilitar la consulta de productos.</li>
+              <li>Adaptación de piezas para distintos canales digitales.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="factors factors--weakness" role="tabpanel" id="foda-panel-d" aria-labelledby="foda-tab-d" tabindex="0" hidden>
+          <div class="swap">
+            <p class="label">Factores internos por mejorar</p>
+            <h3 class="factors__title">Debilidades</h3>
+            <ul class="factors__list">
+              <li>Falta de un calendario editorial consolidado al inicio del plan.</li>
+              <li>Necesidad de definir responsables y tiempos de aprobación.</li>
+              <li>Información de producto que debe unificarse entre los materiales.</li>
+              <li>Falta de una línea base común para evaluar los resultados.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="factors factors--threat" role="tabpanel" id="foda-panel-a" aria-labelledby="foda-tab-a" tabindex="0" hidden>
+          <div class="swap">
+            <p class="label">Factores externos de riesgo</p>
+            <h3 class="factors__title">Amenazas</h3>
+            <ul class="factors__list">
+              <li>Competidores con mayor frecuencia de publicación.</li>
+              <li>Cambios en las preferencias y formatos digitales.</li>
+              <li>Saturación de contenidos comerciales en redes sociales.</li>
+              <li>Riesgo de confundir al público si los datos de los productos no se actualizan.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     07 · PLAN DE ACCIÓN
+     ⚠ BORRADOR: los títulos son los originales; acciones, plazos y KPIs
+     están redactados a partir de las recomendaciones.
+     Cada estrategia enlaza con el hallazgo del informe que la origina.
+====================================================================== -->
+<section class="section section--cocoa on-dark plan" id="plan" tabindex="-1" aria-labelledby="plan-title">
+  <div class="plan__pattern" aria-hidden="true"></div>
+
+  <div class="container plan__content">
+
+    <div class="split-intro" data-reveal>
+      <div>
+        <p class="label label--mark">07 · Propuesta estratégica y plan de acción</p>
+        <h2 class="title" id="plan-title">Seis pilares para <em>fortalecer SAMILU.</em></h2>
+      </div>
+      <p class="split-intro__text muted">
+        Una matriz de implementación con prioridades y métricas asociadas (KPIs), planteada a partir del
+        diagnóstico de identidad, comunicación y percepción del público. Selecciona cada estrategia para
+        consultar sus acciones, plazo e indicador.
+      </p>
+    </div>
+
+    <div class="plan__grid" data-tabs data-reveal>
+
+      <div class="plan__tabs" role="tablist" aria-label="Estrategias del plan de acción" aria-orientation="vertical">
+        <button class="pill-tab pill-tab--row" role="tab" type="button" id="plan-tab-1" aria-controls="plan-panel-1" aria-selected="true">
+          <span class="pill-tab__num">01</span><span class="pill-tab__label">Estandarización visual</span>
+          <svg class="icon pill-tab__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+        <button class="pill-tab pill-tab--row" role="tab" type="button" id="plan-tab-2" aria-controls="plan-panel-2" aria-selected="false" tabindex="-1">
+          <span class="pill-tab__num">02</span><span class="pill-tab__label">Información de producto</span>
+          <svg class="icon pill-tab__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+        <button class="pill-tab pill-tab--row" role="tab" type="button" id="plan-tab-3" aria-controls="plan-panel-3" aria-selected="false" tabindex="-1">
+          <span class="pill-tab__num">03</span><span class="pill-tab__label">Protocolo de comunicación digital</span>
+          <svg class="icon pill-tab__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+        <button class="pill-tab pill-tab--row" role="tab" type="button" id="plan-tab-4" aria-controls="plan-panel-4" aria-selected="false" tabindex="-1">
+          <span class="pill-tab__num">04</span><span class="pill-tab__label">Encuesta continua</span>
+          <svg class="icon pill-tab__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+        <button class="pill-tab pill-tab--row" role="tab" type="button" id="plan-tab-5" aria-controls="plan-panel-5" aria-selected="false" tabindex="-1">
+          <span class="pill-tab__num">05</span><span class="pill-tab__label">Storytelling de origen</span>
+          <svg class="icon pill-tab__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+        <button class="pill-tab pill-tab--row" role="tab" type="button" id="plan-tab-6" aria-controls="plan-panel-6" aria-selected="false" tabindex="-1">
+          <span class="pill-tab__num">06</span><span class="pill-tab__label">Presentación comercial</span>
+          <svg class="icon pill-tab__arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+        </button>
+      </div>
+
+      <div class="plan__panels">
+
+        <article class="strategy on-light" role="tabpanel" id="plan-panel-1" aria-labelledby="plan-tab-1" tabindex="0">
+          <div class="strategy__inner swap">
+            <p class="label">Estrategia 01</p>
+            <h3 class="strategy__title">Estandarización visual</h3>
+            <p class="strategy__action">Unificar la tipografía y los criterios de uso del logotipo, los colores y los elementos gráficos en todos los soportes, con Fredoka como tipografía de uso general.</p>
+            <p class="strategy__origin">Origen: <a class="text-link" href="#identidad">hallazgo de identidad visual · sección 05 <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+            <dl class="strategy__meta">
+              <div><dt class="label">Plazo de ejecución</dt><dd>Corto plazo · 1 a 2 meses</dd></div>
+              <div><dt class="label">KPI / Indicador</dt><dd>Porcentaje de piezas que cumplen los criterios de identidad visual.</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="strategy on-light" role="tabpanel" id="plan-panel-2" aria-labelledby="plan-tab-2" tabindex="0" hidden>
+          <div class="strategy__inner swap">
+            <p class="label">Estrategia 02</p>
+            <h3 class="strategy__title">Información de producto</h3>
+            <p class="strategy__action">Estandarizar la información de la crema untable, las barras energéticas y la miel saborizada en etiquetas, empaques, piezas promocionales y sitio web.</p>
+            <p class="strategy__origin">Origen: <a class="text-link" href="#foda">debilidad de la matriz FODA · sección 06 <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+            <dl class="strategy__meta">
+              <div><dt class="label">Plazo de ejecución</dt><dd>Corto plazo · 2 meses</dd></div>
+              <div><dt class="label">KPI / Indicador</dt><dd>Productos con información uniforme en todos los soportes (meta: 3 de 3).</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="strategy on-light" role="tabpanel" id="plan-panel-3" aria-labelledby="plan-tab-3" tabindex="0" hidden>
+          <div class="strategy__inner swap">
+            <p class="label">Estrategia 03</p>
+            <h3 class="strategy__title">Protocolo de comunicación digital</h3>
+            <p class="strategy__action">Mantener una planificación de contenidos y registrar los tiempos de respuesta en TikTok, Facebook e Instagram para atender dentro de la meta.</p>
+            <p class="strategy__origin">Origen: <a class="text-link" href="#comunicacion">tiempos de respuesta · sección 5.4 <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+            <dl class="strategy__meta">
+              <div><dt class="label">Plazo de ejecución</dt><dd>Permanente · revisión mensual</dd></div>
+              <div><dt class="label">KPI / Indicador</dt><dd>Tiempo promedio de respuesta por canal (meta: 30 minutos o menos).</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="strategy on-light" role="tabpanel" id="plan-panel-4" aria-labelledby="plan-tab-4" tabindex="0" hidden>
+          <div class="strategy__inner swap">
+            <p class="label">Estrategia 04</p>
+            <h3 class="strategy__title">Encuesta continua</h3>
+            <p class="strategy__action">Aplicar la encuesta de percepción de forma periódica y con más participantes para comparar los resultados con esta primera medición.</p>
+            <p class="strategy__origin">Origen: <a class="text-link" href="#encuesta">encuesta a 10 personas · sección 5.2 <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+            <dl class="strategy__meta">
+              <div><dt class="label">Plazo de ejecución</dt><dd>Cada tres meses</dd></div>
+              <div><dt class="label">KPI / Indicador</dt><dd>Porcentaje de respuestas «buena» y «muy buena» por pregunta.</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="strategy on-light" role="tabpanel" id="plan-panel-5" aria-labelledby="plan-tab-5" tabindex="0" hidden>
+          <div class="strategy__inner swap">
+            <p class="label">Estrategia 05</p>
+            <h3 class="strategy__title">Storytelling de origen</h3>
+            <p class="strategy__action">Contar el origen de los productos en la Selva Central con contenidos sobre la miel, la naturaleza y el proceso de elaboración.</p>
+            <p class="strategy__origin">Origen: <a class="text-link" href="#foda">fortaleza de la matriz FODA · sección 06 <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+            <dl class="strategy__meta">
+              <div><dt class="label">Plazo de ejecución</dt><dd>Mediano plazo · 3 meses</dd></div>
+              <div><dt class="label">KPI / Indicador</dt><dd>Publicaciones sobre el origen por mes e interacciones que reciben.</dd></div>
+            </dl>
+          </div>
+        </article>
+
+        <article class="strategy on-light" role="tabpanel" id="plan-panel-6" aria-labelledby="plan-tab-6" tabindex="0" hidden>
+          <div class="strategy__inner swap">
+            <p class="label">Estrategia 06</p>
+            <h3 class="strategy__title">Presentación comercial</h3>
+            <p class="strategy__action">Mejorar progresivamente la presentación de envases y empaques, el aspecto con más valoraciones regulares entre las personas encuestadas.</p>
+            <p class="strategy__origin">Origen: <a class="text-link" href="#encuesta">40% de respuestas regulares · sección 5.2 <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+            <dl class="strategy__meta">
+              <div><dt class="label">Plazo de ejecución</dt><dd>Mediano plazo · 3 a 6 meses</dd></div>
+              <div><dt class="label">KPI / Indicador</dt><dd>Valoraciones «regular» de envases y empaques (línea base: 40%).</dd></div>
+            </dl>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     08 · CONCLUSIONES
+     ⚠ BORRADOR: redactadas con los datos del informe.
+     Cada conclusión se resume en un dato y se desarrolla al lado.
+====================================================================== -->
+<section class="section section--cream" id="conclusiones" tabindex="-1" aria-labelledby="conclusiones-title">
+  <div class="container">
+
+    <div class="conclusions">
+
+      <div class="conclusions__head" data-reveal>
+        <div class="conclusions__sticky">
+          <p class="label label--mark">08 · Conclusiones</p>
+          <h2 class="title" id="conclusiones-title">Lo que el análisis <em>nos deja.</em></h2>
+        </div>
+      </div>
+
+      <ol class="conclusions__list">
+        <li class="conclusion" data-reveal>
+          <p class="conclusion__figure">Aa<small>Identidad</small></p>
+          <p class="conclusion__text">SAMILU cuenta con una identidad visual vinculada con la miel y la naturaleza, aunque necesita unificar el uso tipográfico y los criterios de aplicación del logotipo, los colores y los elementos gráficos.</p>
+        </li>
+        <li class="conclusion" data-reveal>
+          <p class="conclusion__figure">100%<small>Productos</small></p>
+          <p class="conclusion__text">Los productos reciben una valoración favorable: las 10 personas encuestadas los calificaron como buenos (80%) o muy buenos (20%).</p>
+        </li>
+        <li class="conclusion" data-reveal>
+          <p class="conclusion__figure">40%<small>Envases</small></p>
+          <p class="conclusion__text">Los envases y empaques son el aspecto con más valoraciones regulares (40%), seguidos de la atención (30%); ahí se concentran las oportunidades de mejora.</p>
+        </li>
+        <li class="conclusion" data-reveal>
+          <p class="conclusion__figure">4.4–4.7<small>Reputación</small></p>
+          <p class="conclusion__text">Las plataformas de opinión registran puntuaciones de 4.4 a 4.7 sobre 5.0 en Google Maps, TripAdvisor y Facebook Reviews.</p>
+        </li>
+        <li class="conclusion" data-reveal>
+          <p class="conclusion__figure">30 min<small>Respuesta</small></p>
+          <p class="conclusion__text">Los tiempos promedio de respuesta en TikTok, Facebook e Instagram (25, 20 y 15 minutos) se encuentran dentro de la meta de 30 minutos.</p>
+        </li>
+      </ol>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     09 · RECOMENDACIONES
+     Ordenadas en tres niveles según la recomendación clave del informe.
+     data-goto-tab abre la estrategia correspondiente del plan de acción.
+====================================================================== -->
+<section class="section section--paper" id="recomendaciones" tabindex="-1" aria-labelledby="recomendaciones-title">
+  <div class="container">
+
+    <div class="split-intro" data-reveal>
+      <div>
+        <p class="label label--mark">09 · Recomendaciones</p>
+        <h2 class="title" id="recomendaciones-title">Acciones para <em>seguir mejorando.</em></h2>
+      </div>
+      <div class="split-intro__text">
+        <p class="label">Recomendación clave</p>
+        <p class="key-idea">Priorizar lo que fortalece el reconocimiento de marca.</p>
+      </div>
+    </div>
+
+    <div class="lanes">
+
+      <!-- Nivel 1 -->
+      <section class="lane-group lane-group--first on-dark" data-reveal>
+        <header>
+          <span class="lane-group__step">1</span>
+          <h3>Priorizar</h3>
+          <p>La estandarización de la identidad visual y la mejora de la presentación de los empaques.</p>
+        </header>
+        <ul>
+          <li class="rec">
+            <h4>Identidad visual</h4>
+            <p>Unificar la tipografía y los criterios de uso del logotipo, colores y elementos gráficos en todos los soportes.</p>
+            <a class="text-link" href="#plan" data-goto-tab="plan-tab-1">Estrategia 01 <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+          <li class="rec">
+            <h4>Envases y empaques</h4>
+            <p>Mejorar progresivamente la presentación de envases y empaques, considerando que este aspecto recibió valoraciones regulares de parte de algunos encuestados.</p>
+            <a class="text-link" href="#plan" data-goto-tab="plan-tab-6">Estrategia 06 <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Nivel 2 -->
+      <section class="lane-group lane-group--second" data-reveal>
+        <header>
+          <span class="lane-group__step">2</span>
+          <h3>Dar seguimiento</h3>
+          <p>A las opiniones digitales y a los tiempos de respuesta, para que las decisiones futuras se apoyen en indicadores reales y comparables.</p>
+        </header>
+        <ul>
+          <li class="rec">
+            <h4>Reputación digital</h4>
+            <p>Mantener el registro periódico de opiniones y puntuaciones en Google Maps, TripAdvisor y Facebook Reviews para observar cambios en la reputación digital.</p>
+            <a class="text-link" href="#reputacion">Sección 5.3 <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+          <li class="rec">
+            <h4>Tiempos de respuesta</h4>
+            <p>Continuar monitoreando los tiempos de respuesta en TikTok, Facebook e Instagram y procurar que se mantengan dentro de la meta de 30 minutos.</p>
+            <a class="text-link" href="#plan" data-goto-tab="plan-tab-3">Estrategia 03 <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Nivel 3 -->
+      <section class="lane-group lane-group--third" data-reveal>
+        <header>
+          <span class="lane-group__step">3</span>
+          <h3>Complementar</h3>
+          <p>Con información de producto uniforme y contenidos planificados.</p>
+        </header>
+        <ul>
+          <li class="rec">
+            <h4>Información de producto</h4>
+            <p>Estandarizar la información de la crema untable, las barras energéticas y la miel saborizada en etiquetas, empaques, piezas promocionales y sitio web.</p>
+            <a class="text-link" href="#plan" data-goto-tab="plan-tab-2">Estrategia 02 <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+          <li class="rec">
+            <h4>Contenidos digitales</h4>
+            <p>Mantener una planificación de contenidos para los canales digitales, con mensajes claros y coherentes con la identidad de SAMILU.</p>
+            <a class="text-link" href="#plan" data-goto-tab="plan-tab-3">Estrategia 03 <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================================
+     10 · REFERENCIAS BIBLIOGRÁFICAS (formato APA)
+====================================================================== -->
+<section class="section section--cream" id="referencias" tabindex="-1" aria-labelledby="referencias-title">
+  <div class="container">
+
+    <div class="references">
+      <div class="references__head">
+        <p class="label label--mark">10 · Referencias bibliográficas</p>
+        <h2 class="title" id="referencias-title">Fuentes que <em>sustentan el informe.</em></h2>
+      </div>
+
+      <ul class="references__list">
+        <li>
+          <span class="tag">Libro</span>
+          <p>Capriotti, P. (2009). <i>Branding corporativo: Fundamentos para la gestión estratégica de la identidad corporativa.</i> Colección de Libros de la Empresa.</p>
+        </li>
+        <li>
+          <span class="tag">Libro</span>
+          <p>Costa, J. (2004). <i>La imagen de marca: Un fenómeno social.</i> Paidós.</p>
+        </li>
+        <li>
+          <span class="tag">Artículo</span>
+          <p>Kaplan, A. M., &amp; Haenlein, M. (2010). Users of the world, unite! The challenges and opportunities of Social Media. <i>Business Horizons, 53</i>(1), 59-68.</p>
+        </li>
+        <li>
+          <span class="tag">Libro</span>
+          <p>Kotler, P., &amp; Keller, K. L. (2016). <i>Marketing management</i> (15th ed.). Pearson.</p>
+        </li>
+        <li>
+          <span class="tag">Documento interno</span>
+          <p>Sabor Amazónico, Miel y Luz S.A.C. (2026). <i>Imagen Corporativa – SAMILU</i> [Documento institucional interno].</p>
+        </li>
+        <li>
+          <span class="tag">Documento interno</span>
+          <p>Sabor Amazónico, Miel y Luz S.A.C. (2026). <i>Ficha de Análisis de Identidad Institucional</i> [Documento institucional interno].</p>
+        </li>
+        <li>
+          <span class="tag">Sitio web</span>
+          <p>SAMILU. (2026). <i>Sitio web institucional.</i>
+            <a class="references__link" href="https://k71559676-bit.github.io/Sami/" target="_blank" rel="noopener noreferrer">https://k71559676-bit.github.io/Sami/<span class="visually-hidden"> (se abre en una pestaña nueva)</span></a>
+          </p>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+
+<!-- =====================================================================
+     PIE DE PÁGINA
+====================================================================== -->
+<footer class="footer on-dark">
+  <div class="container footer__inner">
+    <a class="footer__brand" href="#inicio">SAMILU<span>.</span></a>
+    <p class="muted">Sabor Amazónico, Miel y Luz S.A.C. · Selva Central, Junín</p>
+    <a class="label footer__top" href="#inicio">
+      Volver arriba
+      <svg class="icon icon--sm icon--up" aria-hidden="true"><use href="#i-arrow"/></svg>
+    </a>
+  </div>
+</footer>
+
+
+<!-- =====================================================================
+     MENÚ (se abre con el botón «Menú» del encabezado)
+     Izquierda: secciones de este informe.
+     Derecha: las 13 páginas del sitio SAMILU con sus apartados.
+====================================================================== -->
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menú de navegación" hidden>
+  <div class="menu__backdrop" data-menu-close></div>
+
+  <div class="menu__panel">
+
+    <div class="menu__bar">
+      <div class="menu__bar-inner">
+        <img class="menu__logo" src="img/logo-samilu.png" alt="SAMILU" width="480" height="226">
+        <button class="menu__close" type="button" data-menu-close>
+          <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+          Cerrar
+        </button>
+      </div>
+    </div>
+
+    <div class="menu__scroll">
+      <div class="menu__grid">
+
+        <!-- Índice del informe: de aquí toma js/script.js el número y el nombre de cada sección -->
+        <nav class="menu__report" aria-labelledby="menu-informe">
+          <h2 class="label menu__heading" id="menu-informe">En este informe</h2>
+          <ol class="menu__sections" id="menu-sections">
+            <li><a class="menu__row" href="#inicio"><span class="menu__num">00</span><span>Inicio</span></a></li>
+            <li><a class="menu__row" href="#contexto"><span class="menu__num">01</span><span>Introducción</span></a></li>
+            <li><a class="menu__row" href="#objetivos"><span class="menu__num">02</span><span>Objetivos</span></a></li>
+            <li><a class="menu__row" href="#marco"><span class="menu__num">03</span><span>Marco teórico</span></a></li>
+            <li><a class="menu__row" href="#metodologia"><span class="menu__num">04</span><span>Metodología</span></a></li>
+            <li><a class="menu__row" href="#identidad"><span class="menu__num">05</span><span>Identidad visual y corporativa</span></a></li>
+            <li><a class="menu__row" href="#encuesta"><span class="menu__num">5.2</span><span>Percepción y satisfacción</span></a></li>
+            <li><a class="menu__row" href="#reputacion"><span class="menu__num">5.3</span><span>Reputación digital</span></a></li>
+            <li><a class="menu__row" href="#comunicacion"><span class="menu__num">5.4</span><span>Comunicación digital</span></a></li>
+            <li><a class="menu__row" href="#foda"><span class="menu__num">06</span><span>Matriz FODA</span></a></li>
+            <li><a class="menu__row" href="#plan"><span class="menu__num">07</span><span>Plan de acción</span></a></li>
+            <li><a class="menu__row" href="#conclusiones"><span class="menu__num">08</span><span>Conclusiones</span></a></li>
+            <li><a class="menu__row" href="#recomendaciones"><span class="menu__num">09</span><span>Recomendaciones</span></a></li>
+            <li><a class="menu__row" href="#referencias"><span class="menu__num">10</span><span>Referencias</span></a></li>
+          </ol>
+        </nav>
+
+        <!-- Páginas del sitio -->
+        <nav class="menu__site" aria-labelledby="menu-sitio">
+          <h2 class="label menu__heading" id="menu-sitio">Sitio SAMILU</h2>
+
+          <div class="menu__pages-wrap" id="menu-pages">
+            <ul class="menu__pages">
+
+              <li>
+                <a class="menu__row menu__row--between" href="index.html">
+                  <span>Inicio</span><svg class="icon icon--sm menu__external" aria-hidden="true"><use href="#i-external"/></svg>
+                </a>
+              </li>
+
+              <li>
+                <button class="menu__row menu__row--between" type="button" aria-expanded="false" aria-controls="sub-empresa">
+                  <span>Empresa</span><svg class="icon menu__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+                </button>
+                <div class="menu__pane" id="sub-empresa" hidden>
+                  <p class="menu__pane-title">Empresa</p>
+                  <a class="menu__go" href="empresa.html">Ir a la página <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                  <ul class="menu__sublinks">
+                    <li><a href="empresa.html#datos">Datos generales</a></li>
+                    <li><a href="empresa.html#descripcion">Descripción</a></li>
+                    <li><a href="empresa.html#mision">Misión</a></li>
+                    <li><a href="empresa.html#vision">Visión</a></li>
+                    <li><a href="empresa.html#valores">Valores</a></li>
+                    <li><a href="index.html">Valores</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <button class="menu__row menu__row--between" type="button" aria-expanded="false" aria-controls="sub-publico">
+                  <span>Público objetivo</span><svg class="icon menu__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+                </button>
+                <div class="menu__pane" id="sub-publico" hidden>
+                  <p class="menu__pane-title">Público objetivo</p>
+                  <a class="menu__go" href="publico-objetivo.html">Ir a la página <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                  <ul class="menu__sublinks">
+                    <li><a href="publico-objetivo.html#segmento">Segmentación</a></li>
+                    <li><a href="publico-objetivo.html#edad">Edad</a></li>
+                    <li><a href="publico-objetivo.html#ubicacion">Ubicación</a></li>
+                    <li><a href="publico-objetivo.html#necesidades">Necesidades</a></li>
+                    <li><a href="publico-objetivo.html#caracteristicas">Características</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <button class="menu__row menu__row--between" type="button" aria-expanded="false" aria-controls="sub-corporativa">
+                  <span>Identidad corporativa</span><svg class="icon menu__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+                </button>
+                <div class="menu__pane" id="sub-corporativa" hidden>
+                  <p class="menu__pane-title">Identidad corporativa</p>
+                  <a class="menu__go" href="identidad-corporativa.html">Ir a la página <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                  <ul class="menu__sublinks">
+                    <li><a href="identidad-corporativa.html#imagen-corporativa">Imagen corporativa</a></li>
+                    <li><a href="identidad-corporativa.html#elementos-identidad">Elementos de identidad</a></li>
+                    <li><a href="identidad-corporativa.html#tipos-identidad">Tipos de identidad</a></li>
+                    <li><a href="identidad-corporativa.html#identidad-cultural">Identidad cultural</a></li>
+                    <li><a href="identidad-corporativa.html#identidad-verbal">Identidad verbal</a></li>
+                    <li><a href="identidad-corporativa.html#identidad-corporativa">Identidad corporativa</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <button class="menu__row menu__row--between" type="button" aria-expanded="false" aria-controls="sub-visual">
+                  <span>Identidad visual</span><svg class="icon menu__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+                </button>
+                <div class="menu__pane" id="sub-visual" hidden>
+                  <p class="menu__pane-title">Identidad visual</p>
+                  <a class="menu__go" href="identidad-visual.html">Ir a la página <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                  <ul class="menu__sublinks">
+                    <li><a href="identidad-visual.html#imagotipo">Imagotipo</a></li>
+                    <li><a href="identidad-visual.html#bocetos-proceso">Bocetos y proceso</a></li>
+                    <li><a href="identidad-visual.html#colores-corporativos">Colores corporativos</a></li>
+                    <li><a href="identidad-visual.html#tipografia">Tipografía</a></li>
+                    <li><a href="identidad-visual.html#elementos-graficos">Elementos gráficos</a></li>
+                    <li><a href="identidad-visual.html#uniformes">Uniformes</a></li>
+                    <li><a href="identidad-visual.html#empaques">Empaques</a></li>
+                    <li><a href="identidad-visual.html#letreros">Letreros</a></li>
+                    <li><a href="identidad-visual.html#decoracion">Decoración</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <button class="menu__row menu__row--between" type="button" aria-expanded="false" aria-controls="sub-institucional">
+                  <span>Imagen institucional</span><svg class="icon menu__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+                </button>
+                <div class="menu__pane" id="sub-institucional" hidden>
+                  <p class="menu__pane-title">Imagen institucional</p>
+                  <a class="menu__go" href="imagen-institucional.html">Ir a la página <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                  <ul class="menu__sublinks">
+                    <li><a href="imagen-institucional.html#percepcion-cliente">Percepción del cliente</a></li>
+                    <li><a href="imagen-institucional.html#fortalezas">Fortalezas</a></li>
+                    <li><a href="imagen-institucional.html#aspectos-mejorar">Aspectos por mejorar</a></li>
+                    <li><a href="imagen-institucional.html#dimensiones-imagen">Dimensiones de imagen</a></li>
+                    <li><a href="imagen-institucional.html#componentes-imagen">Componentes de imagen</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <button class="menu__row menu__row--between" type="button" aria-expanded="false" aria-controls="sub-aplicaciones">
+                  <span>Aplicaciones</span><svg class="icon menu__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+                </button>
+                <div class="menu__pane" id="sub-aplicaciones" hidden>
+                  <p class="menu__pane-title">Aplicaciones</p>
+                  <a class="menu__go" href="aplicaciones.html">Ir a la página <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                  <ul class="menu__sublinks">
+                    <li><a href="aplicaciones.html#tarjetas">Tarjetas</a></li>
+                    <li><a href="aplicaciones.html#vasos-empaques">Vasos y empaques</a></li>
+                    <li><a href="aplicaciones.html#uniformes">Uniformes</a></li>
+                    <li><a href="aplicaciones.html#afiches">Afiches</a></li>
+                    <li><a href="aplicaciones.html#redes-sociales">Redes sociales</a></li>
+                    <li><a href="aplicaciones.html#sitio-web">Sitio web</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <button class="menu__row menu__row--between" type="button" aria-expanded="false" aria-controls="sub-comunicaciones">
+                  <span>Comunicaciones</span><svg class="icon menu__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+                </button>
+                <div class="menu__pane" id="sub-comunicaciones" hidden>
+                  <p class="menu__pane-title">Comunicaciones</p>
+                  <a class="menu__go" href="comunicaciones.html">Ir a la página <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                  <ul class="menu__sublinks">
+                    <li><a href="comunicaciones.html#lenguaje-corporativo">Lenguaje corporativo</a></li>
+                    <li><a href="comunicaciones.html#canales-comunicacion">Canales de comunicación</a></li>
+                    <li><a href="comunicaciones.html#mensaje-principal">Mensaje principal</a></li>
+                    <li><a href="comunicaciones.html#eslogan">Eslogan</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <button class="menu__row menu__row--between" type="button" aria-expanded="false" aria-controls="sub-manual">
+                  <span>Manual de identidad corporativa</span><svg class="icon menu__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+                </button>
+                <div class="menu__pane" id="sub-manual" hidden>
+                  <p class="menu__pane-title">Manual de identidad corporativa</p>
+                  <a class="menu__go" href="manual-identidad.html">Ir a la página <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                  <ul class="menu__sublinks">
+                    <li><a href="manual-identidad.html#identidad-visual">Identidad visual</a></li>
+                    <li><a href="manual-identidad.html#identidad-verbal">Identidad verbal</a></li>
+                    <li><a href="manual-identidad.html#imagotipo">Imagotipo</a></li>
+                    <li><a href="manual-identidad.html#logotipo">Logotipo</a></li>
+                    <li><a href="manual-identidad.html#presentacion-logotipo">Presentación del logotipo</a></li>
+                    <li><a href="manual-identidad.html#estructura-composicion">Estructura y composición</a></li>
+                    <li><a href="manual-identidad.html#area-proteccion">Área de protección</a></li>
+                    <li><a href="manual-identidad.html#tipografia">Tipografía</a></li>
+                    <li><a href="manual-identidad.html#tipografia-principal">Tipografía principal</a></li>
+                    <li><a href="manual-identidad.html#tipografia-secundaria">Tipografía secundaria</a></li>
+                    <li><a href="manual-identidad.html#anatomia-tipografia">Anatomía tipográfica</a></li>
+                    <li><a href="manual-identidad.html#colores">Colores</a></li>
+                    <li><a href="manual-identidad.html#colores-institucionales">Colores institucionales</a></li>
+                    <li><a href="manual-identidad.html#colores-secundarios">Colores secundarios</a></li>
+                    <li><a href="manual-identidad.html#colores-complementarios">Colores complementarios</a></li>
+                    <li><a href="manual-identidad.html#positivo-negativo">Positivo y negativo</a></li>
+                    <li><a href="manual-identidad.html#escala-grises">Escala de grises</a></li>
+                    <li><a href="manual-identidad.html#usabilidad">Usabilidad</a></li>
+                    <li><a href="manual-identidad.html#variaciones-tamano">Variaciones de tamaño</a></li>
+                    <li><a href="manual-identidad.html#fondos-composicion">Fondos y composición</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <button class="menu__row menu__row--between" type="button" aria-expanded="false" aria-controls="sub-propuestas">
+                  <span>Propuestas de mejora</span><svg class="icon menu__chevron" aria-hidden="true"><use href="#i-chevron"/></svg>
+                </button>
+                <div class="menu__pane" id="sub-propuestas" hidden>
+                  <p class="menu__pane-title">Propuestas de mejora</p>
+                  <a class="menu__go" href="propuestas-mejora.html">Ir a la página <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                  <ul class="menu__sublinks">
+                    <li><a href="propuestas-mejora.html#estandarizacion">Estandarización</a></li>
+                    <li><a href="propuestas-mejora.html#material-publicitario">Material publicitario</a></li>
+                    <li><a href="propuestas-mejora.html#colores-tipografias">Colores y tipografías</a></li>
+                    <li><a href="propuestas-mejora.html#redes-sociales">Redes sociales</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <a class="menu__row menu__row--between" href="comunicación%20corporativa.html">
+                  <span>Comunicación corporativa</span><svg class="icon icon--sm menu__external" aria-hidden="true"><use href="#i-external"/></svg>
+                </a>
+              </li>
+
+              <li>
+                <a class="menu__row menu__row--between" href="auditoria-imagen.html">
+                  <span>Auditoría de imagen</span><svg class="icon icon--sm menu__external" aria-hidden="true"><use href="#i-external"/></svg>
+                </a>
+              </li>
+
+              <li>
+                <a class="menu__row menu__row--here" href="#inicio" aria-current="page">
+                  <span>Análisis de imagen pública</span><span class="menu__here-badge">Estás aquí</span>
+                </a>
+              </li>
+
+            </ul>
+
+            <p class="menu__hint" id="menu-hint">Elige una página de la lista para ver sus apartados.</p>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- =====================================================================
+     VISOR AMPLIADO DE IMÁGENES
+     Muestra las imágenes de los botones marcados con data-zoom.
+====================================================================== -->
+<div class="lightbox on-dark" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
+
+  <div class="lightbox__bar">
+    <p class="label lightbox__counter" id="lightbox-counter">1 / 5</p>
+    <button class="lightbox__close" type="button" id="lightbox-close">
+      <svg class="icon" aria-hidden="true"><use href="#i-close"/></svg>
+      Cerrar
+    </button>
+  </div>
+
+  <div class="lightbox__stage" id="lightbox-stage">
+    <img class="lightbox__image" id="lightbox-image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="">
+  </div>
+
+  <div class="lightbox__controls">
+    <button class="lightbox__nav" type="button" id="lightbox-prev" aria-label="Imagen anterior">
+      <svg class="icon icon--left" aria-hidden="true"><use href="#i-arrow"/></svg>
+    </button>
+    <p class="lightbox__caption" id="lightbox-caption" aria-live="polite"></p>
+    <button class="lightbox__nav" type="button" id="lightbox-next" aria-label="Imagen siguiente">
+      <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg>
+    </button>
+  </div>
+
+</div>
+
+
+<!-- =====================================================================
+     JAVASCRIPT
+     El atributo data-preview solo lo usa la vista previa de este entorno;
+     no afecta a la página y se puede borrar.
+====================================================================== -->
+<script src="analisis-imagen.js" defer data-preview="%VITE_PREVIEW%"></script>
+
+</body>
+</html>
